@@ -12,7 +12,14 @@ El proyecto es simplemente un sitio estático que se desplegará en un servicio 
 
 ## Infraestructura
 
+El proyecto utiliza WeDeploy para desplegar la aplicación. Gracias a su CLI, es posible desplegar en local la infraestructura y desplegar sobre ella nuestra aplicación para comprobar de este modo lo que vamos a desplegar en el cloud. Para instalar el CLI será necesario seguir los pasos descritos en el siguiente [enlace](http://wedeploy.com/docs/intro/using-the-command-line.html).
+
 ## Comandos
+
+* Inicializar la infraestructura: `we run`
+* Añadir un proyecto: `we link`
+* Eliminar un proyecto: `we unlink`
+* Parar la infraestructura: `we stop`
 
 ## Consumir api
 
