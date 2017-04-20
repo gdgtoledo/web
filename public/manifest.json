@@ -1,10 +1,10 @@
 {
-  "name": "Curriculum vitae de Javier Lopez de Ancos",
-  "author": "@javierland",
-  "short_name": "javierlopezdeancos",
+  "name": "Web oficial de Software Craftsmanship Toledo",
+  "author": "@swCraftsmenCLM",
+  "short_name": "craftsmanship-toledo",
   "developer": {
-    "name": "Javier López de Ancos",
-    "url": "https://twitter.com/javierland"
+    "name": "Software Craftsmanship Toledo",
+    "url": "https://twitter.com/swCraftsmenCLM"
   },
   "icons": [
     {
