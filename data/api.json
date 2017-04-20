@@ -1,0 +1,8 @@
+[
+	{
+		"description": "Returns all profiles",
+		"path": "/profiles/*",
+		"method": "GET",
+		"data": true
+	}
+]
