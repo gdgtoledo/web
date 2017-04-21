@@ -1,0 +1,20 @@
+[
+	{
+		"description": "Returns all profiles",
+		"path": "/profiles/*",
+		"method": "GET",
+		"data": true
+	},
+	{
+		"description": "Returns one profile identified by its unique profileId",
+		"path": "/profiles/:profileId",
+		"method": "GET",
+		"data": true
+	},
+	{
+		"description": "Stores one profile",
+		"path": "/profiles",
+		"method": "POST",
+		"data": true
+	}
+]
