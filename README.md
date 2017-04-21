@@ -20,6 +20,7 @@ El proyecto utiliza WeDeploy para desplegar la aplicación. Gracias a su CLI, es
 * Añadir un proyecto: `we link`
 * Eliminar un proyecto: `we unlink`
 * Parar la infraestructura: `we stop`
+* Popular la colección de datos: `curl -vX POST http://data.b612.wedeploy.me/profiles -d @sample-data.json --header "Content-Type: application/json"`
 
 ## Consumir api
 
