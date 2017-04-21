@@ -21,13 +21,15 @@ function plotProfiles(profiles) {
 }
 
 function plotProfile(profile) {
-    var memberElement = '';
+    var profileElement = '';
 
-    memberElement += `<li class="member">
+    var personalInformation = profile.personal_information;
+
+    profileElement += `<li class="member">
     <a>
-        <img src="${member.picture_url}" alt="${member.profile_id}" />
+        <img src="${personalInformation.picture_url}" alt="${personalInformation.profile_id}" />
     </a>
 </li>`;
 
-    return memberElement;
+    return profileElement;
 }
