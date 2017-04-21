@@ -39,6 +39,10 @@ body {
   justify-self: center;
 }
 
+.logo {
+  text-align: center;
+}
+
 .me_figure {
     display: flex;
     flex-direction: column;
