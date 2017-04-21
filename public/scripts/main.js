@@ -25,7 +25,7 @@ function plotProfile(profile) {
 
     memberElement += `<li class="member">
     <a>
-        <img src="${member.picture_url}" alt="${member.common_name}" />
+        <img src="${member.picture_url}" alt="${member.profile_id}" />
     </a>
 </li>`;
 
