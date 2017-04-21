@@ -10,5 +10,11 @@
 		"path": "/profiles/:profileId",
 		"method": "GET",
 		"data": true
+	},
+	{
+		"description": "Stores one profile",
+		"path": "/profiles",
+		"method": "POST",
+		"data": true
 	}
 ]
