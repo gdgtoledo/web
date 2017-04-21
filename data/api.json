@@ -4,5 +4,11 @@
 		"path": "/profiles/*",
 		"method": "GET",
 		"data": true
+	},
+	{
+		"description": "Returns one profile identified by its unique profileId",
+		"path": "/profiles/:profileId",
+		"method": "GET",
+		"data": true
 	}
 ]
