@@ -24,10 +24,11 @@ function plotProfile(profile) {
     var profileElement = '';
 
     var personalInformation = profile.personal_information;
+    var profileId = personalInformation.profile_id;
 
     profileElement += `<li class="member">
     <a>
-        <img src="${personalInformation.picture_url}" title="${personalInformation.profile_id}" alt="${personalInformation.profile_id}" />
+        <img src="${personalInformation.picture_url}" title="${profileId}" alt="${profileId}" />
     </a>
 </li>`;
 
