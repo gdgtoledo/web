@@ -1,5 +1,12 @@
 {
     "personal_information": {
+        "name" : "Javier",
+        "surname" : "López de Ancos",
+        "emails": [
+            "javierlopezdeancos@gmail.com"
+        ],
+        "picture_url" : "https://avatars1.githubusercontent.com/u/1202463",
+        "common_name" : "javierland",
         "nationality" : "Spanish",
         "date_birth": "40",
         "phone": "+34 667493086",
