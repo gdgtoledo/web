@@ -36,7 +36,7 @@ function plotProfile(profile) {
 }*/
 
 
-var craft = caft || {};
+var craft = craft || {};
 
 craft.member = (function () {
 
@@ -74,7 +74,7 @@ craft.members = (function () {
         members.node = document.getElementById('members');
         
         for(var p = 0; p < profiles.length; p++) {
-            members.rendered += carft.member.render(profiles[p]);
+            members.rendered += craft.member.render(profiles[p]);
         }
 
         members.node.innerHTML = members.rendered;
