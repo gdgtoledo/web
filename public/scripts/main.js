@@ -1,42 +1,9 @@
-/*function getProfiles() {
-    return WeDeploy.data('data.b612.wedeploy.me')
-        .get('profiles')
-        .then(function(profiles) {
-            plotProfiles(profiles);
-
-		    return this;
-		});
-}
-
-function plotProfiles(profiles) {
-    var list = document.getElementById('members');
-
-    var elements = '';
-
-    for(var i = 0; i < profiles.length; i++) {
-        elements += plotProfile(profiles[i]);
-    }
-
-    list.innerHTML = elements;
-}
-
-function plotProfile(profile) {
-    var profileElement = '';
-
-    var personalInformation = profile.personal_information;
-    var profileId = personalInformation.profile_id;
-
-    profileElement += `<li class="member">
-    <a>
-        <img src="${personalInformation.picture_url}" title="${profileId}" alt="${profileId}" />
-    </a>
-</li>`;
-
-    return profileElement;
-}*/
-
-
 var craft = caft || {};
+
+var DATA_URL = 'data.b612.wedeploy.me';
+var PROFILES_END_POINT = 'profiles';
+
+var MEMBERS_NODE_ID = 'members';
 
 craft.member = (function () {
 
@@ -71,7 +38,7 @@ craft.members = (function () {
         var members = members || {};
         
         members.rendered = '',
-        members.node = document.getElementById('members');
+        members.node = document.getElementById(MEMBERS_NODE_ID);
         
         for(var p = 0; p < profiles.length; p++) {
             members.rendered += carft.member.render(profiles[p]);
@@ -82,8 +49,8 @@ craft.members = (function () {
     }
 
     function get() {
-        return WeDeploy.data('data.b612.wedeploy.me')
-            .get('profiles')
+        return WeDeploy.data(DATA_URL)
+            .get(PROFILES_END_POINT)
             .then(function(profiles) {
                 craft.members.render(profiles);
         });
@@ -91,6 +58,7 @@ craft.members = (function () {
 
     return {
         get: get,
+        render: render,
     }
 
 })();
