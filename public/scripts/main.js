@@ -17,8 +17,8 @@ craft.member = (function () {
             <li class="member">
                 <a>
                     <img src="${member.information.picture_url}" 
-                        title="${member.name} ${member.surname}" 
-                        alt="${member.name} ${member.surname}" />
+                        title="${member.information.name} ${member.information.surname}" 
+                        alt="${member.information.name} ${member.information.surname}" />
                 </a>
             </li>`;
 
@@ -41,7 +41,7 @@ craft.members = (function () {
         members.node = document.getElementById(MEMBERS_NODE_ID);
         
         for(var p = 0; p < profiles.length; p++) {
-            members.rendered += carft.member.render(profiles[p]);
+            members.rendered += craft.member.render(profiles[p]);
         }
 
         members.node.innerHTML = members.rendered;
