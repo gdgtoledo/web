@@ -91,6 +91,7 @@ craft.members = (function () {
 
     return {
         get: get,
+        render: render
     }
 
 })();
