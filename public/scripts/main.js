@@ -50,8 +50,8 @@ craft.member = (function () {
             <li class="member">
                 <a>
                     <img src="${member.information.picture_url}" 
-                        title="${member.name} ${member.surname}" 
-                        alt="${member.name} ${member.surname}" />
+                        title="${member.information.name} ${member.information.surname}" 
+                        alt="${member.information.name} ${member.information.surname}" />
                 </a>
             </li>`;
 
