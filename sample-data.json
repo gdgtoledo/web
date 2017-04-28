@@ -3,6 +3,7 @@
         "personal_information": {
             "name" : "Javier",
             "surname" : "López de Ancos",
+            "description": "Software Engineer",
             "contact" : {
                 "emails": [
                     "javierlopezdeancos@gmail.com"
