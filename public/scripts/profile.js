@@ -43,8 +43,8 @@ craft.profile = (function () {
     }
 
     function render(profile) {
-        renderMe();
-        renderMember();
+        renderMe(profile);
+        renderMember(profile);
     }
 
     function initialize(profileId) {
