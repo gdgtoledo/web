@@ -3,7 +3,7 @@ const PROFILES_END_POINT = 'profiles/';
 craft.profile = (function () {
 
     const ME_NODE_ID = 'me';
-    const CONTACT_NODE_ID = 'contact';
+    const MEMBER_NODE_ID = 'member';
 
     function renderMe(member) {
         const template = `
@@ -17,34 +17,34 @@ craft.profile = (function () {
         craft.dom(`#${ME_NODE_ID}`).render(template);
     }
 
-    function renderContact(contact) {
+    function renderMember(member) {
         return  `
           <li class="contact_social">
-            <a href=${contact.social_networks.profile}>
-              <img src="images/social_${contact.social_networks.network}.svg" alt=${contact.social_networks.network} />
+            <a href=${member.social_networks.profile}>
+              <img src="images/social_${member.social_networks.network}.svg" alt=${member.social_networks.network} />
             </a>
           </li>`;
     }
 
-    function renderContacts(contacts) {
-        let contactsRendered = '';
+    function renderMembers(members) {
+        let membersRendered = '';
         let template = '';
 
-        for (let contact; contact <= contacts.length; contact++) {
-            contactsRendered += renderContact(contacts[contact]);
+        for (let member; member <= members.length; member++) {
+            membersRendered += renderMember(members[member]);
         }
 
         template = `
             <ul class="contact_socials">
-                ${contactsRendered}
+                ${membersRendered}
             </ul>`;
 
-        craft.dom(`#${CONTACT_NODE_ID}`).render(template);
+        craft.dom(`#${MEMBER_NODE_ID}`).render(template);
     }
 
     function render(profile) {
         renderMe();
-        renderContact();
+        renderMember();
     }
 
     function initialize(profileId) {
