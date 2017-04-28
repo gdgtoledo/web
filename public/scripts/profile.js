@@ -27,16 +27,16 @@ craft.profile = (function () {
     }
 
     function renderMembers(members) {
-        let membersRendered = '';
+        let renderedMembers = '';
         let template = '';
 
         for (let member; member <= members.length; member++) {
-            membersRendered += renderMember(members[member]);
+            renderedMembers += renderMember(members[member]);
         }
 
         template = `
             <ul class="contact_socials">
-                ${membersRendered}
+                ${renderedMembers}
             </ul>`;
 
         craft.dom(`#${MEMBER_NODE_ID}`).render(template);
