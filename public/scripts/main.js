@@ -1,3 +1,3 @@
-let craft = craft || {};
+var craft = {};
 
 const DATA_URL = 'data.craftsmanship.wedeploy.me';
