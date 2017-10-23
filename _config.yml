@@ -1,0 +1,43 @@
+name: GDG Toledo
+description: Que no te lo cuente tu cuñado en la cena de navidad
+meta_description: "GDG Toledo"
+
+aboutPage: true
+
+markdown: kramdown
+highlighter: rouge
+
+plugins: [jekyll-paginate]
+paginate: 20
+domain_name: 'http://yourblog-domain.com'
+google_analytics: 'UA-XXXXXXXX-X'
+disqus: true
+disqus_shortname: 'GDG_Toledo'
+
+# Details for the RSS feed generator
+url:            'http://your-blog-url.example.com'
+author:         'GDG Toledo'
+authorTwitter:  'GDGToledo_es'
+
+permalink:       /:year/:title/
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
