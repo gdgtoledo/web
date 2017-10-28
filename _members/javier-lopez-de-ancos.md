@@ -1,6 +1,6 @@
 ---
 name: Javier
 last_name: López de Ancos
-twitter: @javierland
+twitter: javierland
 github: javierlopezdeancos
 ---
