@@ -1,10 +1,10 @@
 ---
 title: Jekyll, No hagas complicado lo que es sencilo
-date: 2017-26-10 19:00:00
+date: 2017-10-26 19:00:00
 description: Introducción a el generador de sitios web estáticos jekyll.
 attendees: 9
 images:
-    - src: assets/meetups/2017-26-10/javi.jpg
+    - src: assets/meetups/2017-10-26/javi.jpg
       width: 800
       height: 1067
       horientation: vertical
