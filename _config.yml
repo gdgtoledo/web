@@ -11,6 +11,9 @@ highlighter: rouge
 plugins: [jekyll-paginate]
 paginate: 20
 
+collections:
+  members:
+  meetups:
 
 google_analytics: 'UA-XXXXXXXX-X'
 
