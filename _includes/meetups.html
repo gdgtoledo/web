@@ -1,0 +1,42 @@
+<section class="meetups">
+
+    <header class="meetups__header">
+        {% if include.limit %}
+            <h1>Últimos meetups</h1>
+        {% else %}
+            <h1>Meetups</h1>
+        {% endif %}
+    </header>
+
+    <div class="meetups__list">
+        {% if include.limit %}
+            {% for meetup in site.meetups limit:10 %}
+            <article class="meetup">
+                <div class="meetup__info">
+                    <a class="meetup__title" href="{{ "/" | relative_url  }}{{ meetup.url | remove_first: '/' }}" >
+                        {{ meetup.title }}
+                    </a>
+                    <aside class="meetup__date">{{ meetup.date | date:"%b %d" }}</aside>
+                </div>
+                <a class="meetup__speaker" href={{ meetup.url }} >
+                    {{ meetup.speaker.name }}
+                </a>
+            </article>
+            {% endfor %}
+        {% else %}
+            {% for meetup in site.meetups  %}
+            <li>
+                {{ meetup.title }}
+            </li>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    {% if include.limit %}
+    <footer class="meetups__footer">
+        <a class="meetups__show-more" href="/meetups.html">ver todos los meetups</a>
+    </footer>
+    {% endif %}
+
+</section>
+

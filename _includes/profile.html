@@ -1,13 +1,5 @@
-<div class="profile">
-    <section id="wrapper">
-        <header id="header">
-        {% if site.aboutPage %}
-            <a href="{{ "/" | relative_url  }}about">
-                <img id="avatar" class="2x" src="{{ "/" | relative_url  }}assets/images/avatar.png"/>
-            </a>
-        {% else %}
-            <img id="avatar" class="2x" src="{{ "/" | relative_url  }}assets/images/avatar.png"/>
-        {% endif %}
-        </header>
-    </section>
-</div>
+<section class="profile">
+    <div class="profile__wrapper">
+        <img class="profile__logo" src="{{ "/" | relative_url  }}assets/images/avatar.png"/>
+    </div>
+</section>

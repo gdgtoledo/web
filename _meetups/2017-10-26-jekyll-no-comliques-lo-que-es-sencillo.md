@@ -1,4 +1,7 @@
 ---
+speaker:
+  name: Javier López de Ancos
+  url: members/javier-lopez-de-ancos-html
 title: Jekyll, No hagas complicado lo que es sencilo
 date: 2017-10-26 19:00:00
 description: Introducción a el generador de sitios web estáticos jekyll.

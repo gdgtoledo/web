@@ -4,15 +4,16 @@ archive: true
 ---
 
 <article class="post">
-    <header>
+    <header class="post__header">
         <h1>{{ page.title }}</h1>
-        <h2 class="headline">{{ page.date | date:"%B %-d, %Y" }}</h2>
+        <h2>{{ page.date | date:"%B %-d, %Y" }}</h2>
     </header>
-    <section id="post-body">
+    <section id="post-body" class="post__body">
         {{content}}
     </section>
 </article>
-<footer id="post-meta" class="clearfix">
+
+<footer id="post-meta" class="post__meta clearfix">
     <a href="http://twitter.com/{{ site.authorTwitter }}">
         <img class="avatar" src="{{ "/" | relative_url  }}assets/images/avatar.png">
         <div>
@@ -20,7 +21,6 @@ archive: true
             <span>{{ site.description }}</span>
         </div>
     </a>
-
     <section id="sharing">
         {% include share.html %}
     </section>
