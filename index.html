@@ -3,7 +3,13 @@ profile: true
 layout: default
 ---
 
-{% include meetups.html limit=true %}
-{% include posts.html limit=true %}
-{% include members.html %}
-{% include footer.html %}
+<div class="hero-container">
+    {% include hero.html %}
+</div>
+
+<div class="page-container">
+    {% include meetups.html limit=true %}
+    {% include posts.html limit=true %}
+    {% include members.html %}
+    {% include footer.html %}
+</div>

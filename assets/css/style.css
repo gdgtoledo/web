@@ -620,10 +620,19 @@ h1 {
 |              |
 \*            */
 
-.wrapper {
+.page-container {
   max-width: 80vw;
   margin: 0 auto;
   padding: 60px 40px 100px 40px;
+}
+
+.app-container {
+  width: 100vw;
+  padding: 0;
+}
+
+.hero-container {
+  height: 100vh;
 }
 
 .wrapper.home {
@@ -644,11 +653,11 @@ h1 {
 
 /*            *\
 |              |
-|   profile    |
+|    hero      |
 |              |
 \*            */
 
-.profile {
+.hero {
   height: 100%;
   background: url("../images/background.png");
   background-size: cover;
@@ -656,7 +665,7 @@ h1 {
   background-position: center center;
 }
 
-.profile .profile__wrapper {
+.hero .hero__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -664,35 +673,54 @@ h1 {
   height: 100%;
 }
 
-.profile .profile__logo {
+.hero .hero__logo {
   width: 30vw;
 }
 
 /*            *\
 |              |
 |     post     |
+|    meetup    |
 |              |
 \*            */
 
 .post__header,
+.meetup__header,
+.member__header,
 .post__header h1,
+.meetup__header h1,
+.member__header h1,
 .post__body ol,
+.meetup__body ol,
 .post__body ul,
+.meetup__body h1,
 .post__body h1,
+.meetup__body h1,
 .post__body h2,
+.meetup__body h2,
+.member__header h2,
 .post__body h3,
+.meetup__body h3,
+.member__header h3,
 .post__body h4,
+.meetup__body h4,
 .post__body h5,
-.post__body h6 {
+.meetup__body h5,
+.post__body h6,
+.meetup__body h6 {
   margin-bottom: 20px;
 }
 
 .post__header h1,
-.post__header h2 {
+.meetup__header h1,
+.post__header h2,
+.meetup__header h2 {
   text-align: left;
 }
 
-.post__header h2 {
+.post__header h2,
+.meetup__header h2,
+.member__header h2 {
   font-family: var(--font-family-helvetica);
   font-size: var(--text-size-m);
   font-weight: var(--text-weight-normal);
@@ -702,32 +730,39 @@ h1 {
   letter-spacing: 2px;
 }
 
-.post__body {
+.post__body
+.meetup__body {
   font-size: var(--text-size-l);
 }
 
-.post__body blockquote {
+.post__body blockquote,
+.meetup__body blockquote {
   border-left: none;
   padding-left: 0;
 }
 
 .post__body blockquote p:before,
-.post__body blockquote p:after {
+.meetup__body blockquote p:before,
+.post__body blockquote p:after,
+.meetup__body blockquote p:after {
   font-size: calc(var(--text-size-2xl));
   color: var(--text-color-secondary);
 }
 
-.post__body blockquote p:before {
+.post__body blockquote p:before,
+.meetup__body blockquote p:before {
   content: open-quote;
   margin-right: 5px;
 }
 
-.post__body blockquote p:after {
+.post__body blockquote p:after,
+.meetup__body blockquote p:after  {
   content: close-quote;
    margin-left: 5px;
 }
 
-.post__body blockquote p {
+.post__body blockquote p,
+.meetup__body blockquote p {
   quotes: "“" "”" "‘" "’";
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-xl);
@@ -736,18 +771,22 @@ h1 {
 }
 
 .post__body ol,
-.post__body ol li {
+.meetup__body ol,
+.post__body ol li,
+.meetup__body ol li {
   list-style-type: decimal;
 }
 
-.post__body p {
+.post__body p,
+.meetup__body p  {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-normal);
   font-size: var(--text-size-l);
   color: var(--text-color-gray-six);
 }
 
-.post__body a {
+.post__body a,
+.meetup__body a {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-bold);
   color: var(--text-color-gray-four);
@@ -755,49 +794,77 @@ h1 {
   transition: all 0.15s ease;
 }
 
-.post__body a:hover {
+.post__body a:hover,
+.meetup__body a:hover {
   text-decoration: none;
   color: var(--text-color-gray-five);
   border-bottom: 4px solid var(--color-tertiary-dark);
 }
 
-.post__body pre {
+.post__body pre,
+.meetup__body pre {
   font-size: var(--text-size-m);
 }
 
 .post__body h1,
+.meetup__body h1,
 .post__body h2,
+.meetup__body h2,
 .post__body h3,
+.meetup__body h3,
 .post__body h4,
+.meetup__body h4,
 .post__body h5,
-.post__body h6 {
+.meetup__body h5,
+.post__body h6,
+.meetup__body h6, {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-bold);
   color: var(--text-color-black);
 }
 
 .post__body h2,
+.meetup__body h2,
 .post__body h4,
-.post__body h6 {
+.meetup__body h4,
+.post__body h6,
+.meetup__body h6 {
   text-decoration: underline;
 }
 
-.post__body h1 {
+.post__body h1,
+.meetup__body h1 {
   font-size: var(--text-size-2xl);
   font-style: normal;
   background-image: none;
   -webkit-text-fill-color: var(--text-color-black)
 }
 
-.post__body h2 {
+.post__body h2,
+.meetup__body h2 {
   font-size: calc(var(--text-size-2xl) - 0.2rem);
   font-style: normal;
 }
 
-.post__body h3 { font-size: calc(var(--text-size-2xl) - 0.3rem); }
-.post__body h4 { font-size: calc(var(--text-size-2xl) - 0.4rem); }
-.post__body h5 { font-size: calc(var(--text-size-2xl) - 0.5rem); }
-.post__body h6 { font-size: calc(var(--text-size-2xl) - 0.6rem); }
+.post__body h3,
+.meetup__body h3 {
+  font-size: calc(var(--text-size-2xl) - 0.3rem);
+}
+
+.post__body h4,
+.meetup__body h4 {
+  font-size: calc(var(--text-size-2xl) - 0.4rem);
+}
+
+.post__body h5,
+.meetup__body h5 {
+  font-size: calc(var(--text-size-2xl) - 0.5rem);
+}
+
+.post__body h6,
+.meetup__body h6 {
+  font-size: calc(var(--text-size-2xl) - 0.6rem);
+}
 
 /*            *\
 |              |
