@@ -557,6 +557,7 @@ h2.month {
   --text-color-primary:       var(--color-primary);
   --text-color-primary-dark:  var(--color-primary-dark);
   --text-color-secondary:     var(--color-secondary);
+  --text-color-white:         var(--color-white);
   --text-color-black:         var(--color-black);
   --text-color-gray-one:      var(--color-gray-one);
   --text-color-gray-twoo:     var(--color-gray-twoo);
@@ -659,10 +660,10 @@ h1 {
 
 .hero {
   height: 100%;
-  background: url("../images/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  // background: url("../images/background.png");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center center;
 }
 
 .hero .hero__wrapper {
@@ -790,15 +791,16 @@ h1 {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-bold);
   color: var(--text-color-gray-four);
-  border-bottom: 4px solid var(--color-tertiary);
+  border-bottom: 4px solid var(--color-secondary);
   transition: all 0.15s ease;
 }
 
 .post__body a:hover,
 .meetup__body a:hover {
   text-decoration: none;
-  color: var(--text-color-gray-five);
-  border-bottom: 4px solid var(--color-tertiary-dark);
+  background-color: var(--color-secondary);
+  border-bottom: 4px solid var(--color-secondary);
+  color: var(--text-color-white);
 }
 
 .post__body pre,
@@ -909,7 +911,9 @@ h1 {
 
 .meetups__list .meetup__info:hover .meetup__title,
 .posts__list .post__info:hover .post__title {
-  border-bottom: 4px solid var(--color-tertiary-dark);
+  background-color: var(--color-secondary);
+  border-bottom: 4px solid var(--color-secondary);
+  color: var(--text-color-white);
 }
 
 .meetups__list .meetup__info .meetup__title,
@@ -918,7 +922,7 @@ h1 {
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-xl);
   color: var(--text-color-gray-four);
-  border-bottom: 4px solid var(--color-tertiary);
+  border-bottom: 4px solid var(--color-secondary);
   transition: all 0.15s ease;
 }
 
