@@ -288,10 +288,6 @@ img {
   border-bottom: 1px solid #eee;
 }
 
-.post {
-  margin: 80px 0 0 0;
-}
-
 #post-meta {
   font-size: 13px;
   font-weight: bold;
@@ -503,15 +499,15 @@ h2.month {
   --color-primary-dark:   #1E56B3;
   --color-secondary:      #DB4437;
   --color-tertiary:       #ffb90e;
-  --color-tertiary-dark:  #d69000;
   --color-white:          white;
   --color-black:          black;
-  --color-gray-one:       #333;
-  --color-gray-twoo:      #aaa;
-  --color-gray-tree:      #bbb;
-  --color-gray-four:      #747071;
-  --color-gray-five:      #484546;
-  --color-gray-six:       #666;
+  --color-gray-xl:        #333;
+  --color-gray-l:         #484546;
+  --color-gray-m:         #666;
+  --color-gray-s:         #747071;
+  --color-gray-xs:        #aaa;
+  --color-gray-2xs:       #bbb;
+  --color-gray-3xs:       #f1eeee;
 }
 
 /*            *\
@@ -559,12 +555,12 @@ h2.month {
   --text-color-secondary:     var(--color-secondary);
   --text-color-white:         var(--color-white);
   --text-color-black:         var(--color-black);
-  --text-color-gray-one:      var(--color-gray-one);
-  --text-color-gray-twoo:     var(--color-gray-twoo);
-  --text-color-gray-tree:     var(--color-gray-tree);
-  --text-color-gray-four:     var(--color-gray-four);
-  --text-color-gray-five:     var(--color-gray-five);
-  --text-color-gray-six:      var(--color-gray-six);
+  --text-color-gray-xl:       var(--color-gray-xl);
+  --text-color-gray-l:        var(--color-gray-l);
+  --text-color-gray-m:        var(--color-gray-m);
+  --text-color-gray-s:        var(--color-gray-s);
+  --text-color-gray-xs:       var(--color-gray-xs);
+  --text-color-gray-2xs:      var(--color-gray-2xs);
 }
 
 /*            *\
@@ -593,7 +589,7 @@ body {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-normal);
   font-size: var(--text-size-root);
-  color: var(--text-color-gray-six);
+  color: var(--text-color-gray-m);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -605,7 +601,6 @@ body {
 \*            */
 
 h1 {
-  font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-3xl);
   color: var(--text-color-primary);
@@ -615,6 +610,15 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-helvetica);
+}
+
 /*            *\
 |              |
 |   wrapper    |
@@ -622,9 +626,8 @@ h1 {
 \*            */
 
 .page-container {
-  max-width: 80vw;
   margin: 0 auto;
-  padding: 60px 40px 100px 40px;
+  padding: 15vh 6vw;
 }
 
 .app-container {
@@ -725,7 +728,7 @@ h1 {
   font-family: var(--font-family-helvetica);
   font-size: var(--text-size-m);
   font-weight: var(--text-weight-normal);
-  color: var(--text-color-gray-twoo);
+  color: var(--text-color-gray-xs);
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -742,33 +745,14 @@ h1 {
   padding-left: 0;
 }
 
-.post__body blockquote p:before,
-.meetup__body blockquote p:before,
-.post__body blockquote p:after,
-.meetup__body blockquote p:after {
-  font-size: calc(var(--text-size-2xl));
-  color: var(--text-color-secondary);
-}
-
-.post__body blockquote p:before,
-.meetup__body blockquote p:before {
-  content: open-quote;
-  margin-right: 5px;
-}
-
-.post__body blockquote p:after,
-.meetup__body blockquote p:after  {
-  content: close-quote;
-   margin-left: 5px;
-}
-
 .post__body blockquote p,
 .meetup__body blockquote p {
-  quotes: "“" "”" "‘" "’";
-  font-weight: var(--text-weight-bold);
-  font-size: var(--text-size-xl);
+  font-weight: var(--text-weight-normal);
+  font-size: var(--text-size-l);
   line-height: var(--text-size-2xl);
-  color: var(--text-color-gray-six);
+  color: var(--text-color-gray-s);
+  background-color: var(--color-gray-3xs);
+  padding: 20px;
 }
 
 .post__body ol,
@@ -783,14 +767,14 @@ h1 {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-normal);
   font-size: var(--text-size-l);
-  color: var(--text-color-gray-six);
+  color: var(--text-color-gray-m);
 }
 
 .post__body a,
 .meetup__body a {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-bold);
-  color: var(--text-color-gray-four);
+  color: var(--text-color-gray-s);
   border-bottom: 4px solid var(--color-secondary);
   transition: all 0.15s ease;
 }
@@ -819,7 +803,7 @@ h1 {
 .post__body h5,
 .meetup__body h5,
 .post__body h6,
-.meetup__body h6, {
+.meetup__body h6 {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-bold);
   color: var(--text-color-black);
@@ -906,7 +890,7 @@ h1 {
 .posts__list .post__info:hover .post__title,
 .posts__list .post__info:hover .post__date {
   text-decoration: none;
-  color: var(--text-color-gray-five);
+  color: var(--text-color-gray-l);
 }
 
 .meetups__list .meetup__info:hover .meetup__title,
@@ -921,7 +905,7 @@ h1 {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-xl);
-  color: var(--text-color-gray-four);
+  color: var(--text-color-gray-s);
   border-bottom: 4px solid var(--color-secondary);
   transition: all 0.15s ease;
 }
@@ -931,7 +915,7 @@ h1 {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-xl);
-  color: var(--text-color-gray-tree);
+  color: var(--text-color-gray-2xs);
 }
 
 .meetups__list .meetup__speaker,
@@ -939,7 +923,7 @@ h1 {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-normal);
   font-size: var(--text-size-l);
-  color: var(--text-color-gray-twoo);
+  color: var(--text-color-gray-xs);
 }
 
 .meetups__footer,
