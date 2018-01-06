@@ -10,35 +10,38 @@
 
     <div class="posts__list">
         {% if include.limit %}
-            {% for post in site.posts limit:10 %}
-            <article class="post">
-                <div class="post__info">
-                    <a class="post__title" href="{{ "/" | relative_url  }}{{ post.url | remove_first: '/' }}" >
-                        {{ post.title }}
-                    </a>
-                    <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
-                </div>
-                <div class="post__description">
-                    {{ post.description }}
-                </div>
-            </article>
+            {% for post in site.posts limit:4 %}
+                <article class="post">
+                    <section class="post__info">
+                        <a class="post__title" href="{{ "/" | relative_url  }}{{ post.url | remove_first: '/' }}" >
+                            {{ post.title }}
+                        </a>
+                        <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
+                    </section>
+                </article>
             {% endfor %}
         {% else %}
-            {% for post in site.posts  %}
-            <li>
-                {{ post.title }}
-                {% if paginator.previous_page or paginator.next_page %}
-                    {% include pagination.html %}
-                {% endif %}
-            </li>
+            {% for post in paginator.posts %}
+                <article class="post">
+                    <section class="post__info">
+                        <a class="post__title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                        <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
+                    </section>
+                    <section class="post__description">
+                        <a class="post__description" href="{{ post.url }}" >
+                            {{ post.description }}
+                        </a>
+                    </section>
+                </article>
             {% endfor %}
+            {% include paginator.html %}
         {% endif %}
     </div>
 
     {% if include.limit %}
-    <footer class="posts__footer">
-        <a class="posts__show-more" href="/meetups.html">ver todos los posts</a>
-    </footer>
+        <footer class="posts__footer">
+            <a class="posts__show-more" href="/posts">ver todos los posts</a>
+        </footer>
     {% endif %}
 
 </section>

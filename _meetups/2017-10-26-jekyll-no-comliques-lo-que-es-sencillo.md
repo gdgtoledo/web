@@ -5,18 +5,20 @@ date: 2017-10-26 19:00:00
 speaker:
   name: Javier López de Ancos
   url: members/javier-lopez-de-ancos-html
-description: Introducción a el generador de sitios web estáticos jekyll.
+description: Introducción a el generador de sitios web estáticos "jekyll".
 attendees: 9
-video: http://www.youtube.com/weywuyeuwe
+slides: http://www.setHereUrl
+code: http://www.setHereUrl
+video: http://www.youtube.com/setHereUrl
 images:
-    - src: assets/meetups/2017-10-26/javi.jpg
+    - src: /assets/images/meetups/2017-10-26-jekyll-no-compliques-lo-que-es-sencillo/javi.jpg
       width: 800
       height: 1067
       horientation: vertical
       alt: Javi sorteando licencia de Jetbrains
 ---
 
-Quiero hacer una web sencilla para poder cambiar contenidos rápidamente y sin complicaciones, **ME PONGO UN WORDPRESS!!!**.
+Quiero hacer una web sencilla para poder cambiar contenidos rápidamente y sin complicaciones, **me pongo un wordpress!!!**.
 
 A veces hay que ajustar mejor la herramienta a nuestros propósitos, ¿De verdad necesito una base de datos? ¿De verdad necesito un lenguaje de servidor para publicar contenidos de una forma ágil? ¿De verdad necesito toda esa infraestructura de desarrollo y despliegue para simplemente publicar contenido de una forma rápida?
 

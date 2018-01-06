@@ -10,32 +10,38 @@
 
     <div class="meetups__list">
         {% if include.limit %}
-            {% for meetup in site.meetups limit:10 %}
-            <article class="meetup">
-                <div class="meetup__info">
-                    <a class="meetup__title" href="{{ "/" | relative_url  }}{{ meetup.url | remove_first: '/' }}" >
-                        {{ meetup.title }}
-                    </a>
-                    <aside class="meetup__date">{{ meetup.date | date:"%b %d" }}</aside>
-                </div>
-                <a class="meetup__speaker" href={{ meetup.url }} >
-                    {{ meetup.speaker.name }}
-                </a>
-            </article>
+            {% for meetup in site.meetups limit:4 %}
+                <article class="meetup">
+                    <section class="meetup__info">
+                        <a class="meetup__title" href="{{ "/" | relative_url  }}{{ meetup.url | remove_first: '/' }}" >
+                            {{ meetup.title }}
+                        </a>
+                        <aside class="meetup__date">{{ meetup.date | date:"%b %d" }}</aside>
+                    </section>
+                </article>
             {% endfor %}
         {% else %}
-            {% for meetup in site.meetups  %}
-            <li>
-                {{ meetup.title }}
-            </li>
+            {% for meetup in paginator.posts %}
+                <article class="meetup">
+                    <section class="meetup__info">
+                        <a class="meetup__title" href="{{ meetup.url | relative_url }}">{{ meetup.title | escape }}</a>
+                        <aside class="meetup__date">{{ meetup.date | date:"%b %d" }}</aside>
+                    </section>
+                    <section class="meetup__speaker">
+                        <a class="meetup__speaker-name" href="{{ meetup.url }}" >
+                            {{ meetup.speaker.name }}
+                        </a>
+                    </section>
+                </article>
             {% endfor %}
+            {% include paginator.html %}
         {% endif %}
     </div>
 
     {% if include.limit %}
-    <footer class="meetups__footer">
-        <a class="meetups__show-more" href="/meetups.html">ver todos los meetups</a>
-    </footer>
+        <footer class="meetups__footer">
+            <a class="meetups__show-more" href="/meetups">ver todos los meetups</a>
+        </footer>
     {% endif %}
 
 </section>
