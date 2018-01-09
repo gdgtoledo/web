@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>GDG Toledo</title>
+    <description>El espíritu de este grupo es fomentar y compartir las buenas prácticas y las experiencias en herramientas, frameworks, lenguajes, etc</description>
+    <link>https://javierlopezdeancos.github.io</link>
+    <atom:link href="https://javierlopezdeancos.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Hola Mundo</title>
+        
+        
+          <description>&lt;p&gt;Esto es un ejemplo de post que probablemente debería haber escrito Manuel de la Peña al ser el primer porst de esta web,
+pero como todos sabemos, los recortes ✂️ van a hacer que no pueda estar hoy aquí con nosotros, ¿Os acordais cuando todo
+eran risas y pegatinas?&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 10 Nov 2013 10:18:00 +0000</pubDate>
+        <link>https://javierlopezdeancos.github.io/posts/2013-11-10-hola-mundo/</link>
+        <guid isPermaLink="true">https://javierlopezdeancos.github.io/posts/2013-11-10-hola-mundo/</guid>
+      </item>
+    
+  </channel>
+</rss>
