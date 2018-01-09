@@ -36,6 +36,19 @@ collections:
     output: true
     permalink: /posts/:path/
 
+navigation:
+  - url: /
+    title: home
+    weight: 1
+
+  - url: '/meetups/'
+    title: meetups
+    weight: 2
+
+  - url: '/posts/'
+    title: posts
+    weight: 3
+
 google_analytics: 'UA-XXXXXXXX-X'
 
 disqus: true
