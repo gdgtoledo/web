@@ -1,0 +1,31 @@
+---
+layout: default
+archive: true
+---
+
+<div class="page-container">
+
+    <article class="meetup">
+        <header class="meetup__header">
+            <h1>{{ page.title }}</h1>
+            <h2>{{ page.description }}</h2>
+            <h3>{{ page.date | date:"%B %-d, %Y" }}</h3>
+        </header>
+        <section class="meetup__body">
+            <p>{{ content }}</p>
+        </section>
+        {% if page.images %}
+            <section class="meetup__images">
+                <h2 class="meetup__images__header">Fotos</h2>
+                <ul  class="meetup__images__list">
+                    {% for image in page.images %}
+                        <li class="meetup__image">
+                            <img src="{{ image.src }}" alt="{{ image.alt }}">
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+    </article>
+
+</div>
