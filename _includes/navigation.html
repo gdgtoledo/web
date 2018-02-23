@@ -1,6 +1,5 @@
 <nav class="navigation">
     <ul class="navigation__items">
-        {{ site.navigation }}
         {% for navigation_item in site.navigation %}
             <li class="navigation__item">
                 <a {% if navigation_item.url == page.url %}class="navigation__link navigation__link--active"{% else %} class="navigation__link"{% endif %}

@@ -40,7 +40,7 @@
 
     {% if include.limit %}
         <footer class="posts__footer">
-            <a class="posts__show-more" href="/posts">ver todos los posts</a>
+            <a class="posts__show-more" href="{{ "/posts" | relative_url }}" >ver todos los posts</a>
         </footer>
     {% endif %}
 
