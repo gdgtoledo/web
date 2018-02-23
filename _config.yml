@@ -41,11 +41,11 @@ navigation:
     title: home
     weight: 1
 
-  - url: '/meetups/'
+  - url: '/meetups'
     title: meetups
     weight: 2
 
-  - url: '/posts/'
+  - url: '/posts'
     title: posts
     weight: 3
 
