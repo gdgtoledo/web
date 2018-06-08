@@ -28,13 +28,10 @@ pagination:
 collections:
   members:
     output: true
-    permalink: /members/:path/
   meetups:
     output: true
-    permalink: /meetups/:path/
   posts:
     output: true
-    permalink: /posts/:path/
 
 navigation:
   - url: /
