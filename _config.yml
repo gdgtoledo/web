@@ -1,3 +1,4 @@
+baseurl: /web
 name: GDG Toledo
 description: El espíritu de este grupo es fomentar y compartir las buenas prácticas y las experiencias en herramientas, frameworks, lenguajes, etc
 meta_description: "GDG Toledo"
@@ -32,6 +33,14 @@ collections:
     output: true
   posts:
     output: true
+
+autopages:
+  enabled: true
+  collections:
+    enabled: true
+    slugify:
+      mode: 'ascii'
+      cased: true
 
 navigation:
   - url: /
