@@ -2,7 +2,7 @@ baseurl: /web
 name: GDG Toledo
 description: El espíritu de este grupo es fomentar y compartir las buenas prácticas y las experiencias en herramientas, frameworks, lenguajes, etc
 meta_description: "GDG Toledo"
-domain_name: "https://gdgtoledo.github.io"
+domain_name: 'https://gdgtoledo.github.io'
 
 aboutPage: false
 
@@ -13,7 +13,7 @@ plugins:
   - jekyll-paginate-v2
 
 paginate: nil
-paginate_path: "/legacy/page:num/"
+paginate_path: '/legacy/page:num/'
 
 pagination:
   enabled: true
@@ -39,7 +39,7 @@ autopages:
   collections:
     enabled: true
     slugify:
-      mode: "ascii"
+      mode: 'ascii'
       cased: true
 
 navigation:
@@ -47,11 +47,11 @@ navigation:
     title: home
     weight: 1
 
-  - url: "/meetups"
+  - url: '/meetups'
     title: meetups
     weight: 2
 
-  - url: "/posts"
+  - url: '/posts'
     title: posts
     weight: 3
 
@@ -61,8 +61,8 @@ disqus: true
 disqus_shortname: "GDGToledo"
 
 # Details for the RSS feed generator
-url: "https://gdgtoledo.github.io/web"
-author: "GDG Toledo"
-authorTwitter: "GDGToledo_es"
+url: 'https://gdgtoledo.github.io/web'
+author: 'GDG Toledo'
+authorTwitter: 'GDGToledo_es'
 
 permalink: /:year/:title/
