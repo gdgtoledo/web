@@ -11,7 +11,7 @@ Si tienes Docker instalado en el sistema, accede a la ra√≠z del proyecto y podr√
 
 - Compilar y servir en tiempo real usando el comando:
 ````
-docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serv
+docker-compose up --build
 ````
 - si solo quieres compilar el proyecto puedes hacer uso de la imagen oficial de Jekyll en DockerHub:
 ````
