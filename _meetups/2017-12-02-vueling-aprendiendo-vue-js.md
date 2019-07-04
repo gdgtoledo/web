@@ -7,8 +7,12 @@ speaker:
   url: members/rafael-garcia-html
 description: Introducción al framework de moda en javascript vue.js
 attendees: 9
-slides: https://github.com/rafagarcia/vueling
-code: https://github.com/rafagarcia/vueling
+slides: 
+  description: Presentación utilizada en el meetup
+  url: https://github.com/rafagarcia/vueling
+code: 
+  description: Repositorio de código en GitHub
+  url: https://github.com/rafagarcia/vueling
 images:
     - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/rafa-explicando.jpg
       width: 600
