@@ -16,7 +16,7 @@
                         <a class="meetup__title" href="{{ "/" | relative_url  }}{{ meetup.url | remove_first: '/' }}" >
                             {{ meetup.title }}
                         </a>
-                        <aside class="meetup__date">{{ meetup.date | date:"%b %d" }}</aside>
+                        <aside class="meetup__date">{{ meetup.date | date:"%b %d" }} | {{ meetup.attendees }} asistentes</aside>
                     </section>
                 </article>
             {% endfor %}
@@ -25,7 +25,7 @@
                 <article class="meetup">
                     <section class="meetup__info">
                         <a class="meetup__title" href="{{ meetup.url | relative_url }}">{{ meetup.title | escape }}</a>
-                        <aside class="meetup__date">{{ meetup.date | date:"%b %d" }}</aside>
+                        <aside class="meetup__date">{{ meetup.date | date:"%b %d" }} | {{ meetup.attendees }} asistentes</aside>
                     </section>
                     <section class="meetup__speaker">
                         <a class="meetup__speaker-name" href="{{ meetup.url }}" >
