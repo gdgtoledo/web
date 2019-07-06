@@ -8,38 +8,38 @@ speaker:
 description: Introducción al framework de moda en javascript vue.js
 attendees: 9
 slides: 
-  description: Presentación utilizada en el meetup
-  url: https://github.com/rafagarcia/vueling
-code: 
-  description: Repositorio de código en GitHub
-  url: https://github.com/rafagarcia/vueling
+   - description: Presentación utilizada en el meetup
+     url: https://github.com/rafagarcia/vueling
+codes: 
+   - description: Repositorio de código en GitHub
+     url: https://github.com/rafagarcia/vueling
 images:
-    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/rafa-explicando.jpg
+    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/rafa-explicando.jpg
       width: 600
       height: 450
       horientation: horizontal
       alt: Rafa explicando vue
-    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/rafa-explicando-dos.jpg
+    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/rafa-explicando-dos.jpg
       width: 600
       height: 450
       horientation: horizontal
       alt: Rafa explicando vue mas de cerca
-    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/ceramica.jpg
+    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/ceramica.jpg
       width: 600
       height: 450
       horientation: horizontal
       alt: Visita a taller cerámico
-    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/ceramica2.jpg
+    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/ceramica2.jpg
       width: 600
       height: 450
       horientation: horizontal
       alt: Otra foto de la visita al taller cerámico
-    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/mazinger.jpg
+    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/mazinger.jpg
       width: 600
       height: 450
       horientation: horizontal
       alt: Imagen de la cabeza de Mazinguer Z en cerámica
-    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/menu.jpg
+    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/menu.jpg
       width: 450
       height: 600
       horientation: vertical

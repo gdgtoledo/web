@@ -2,19 +2,17 @@
 layout: meetup
 title: Blockchain - Ethic Hub (Toledo)
 date: 2018-02-05 10:00:00
-speaker:
-  - name: Iñigo Molero
-  - name: Jori Armbruster 
-  - name: Gabriela Chang
+speaker: 
+    name: Jori Armbruster, Gabriela Chang e Íñigo Molero
 description: Introducción a blockchain, el corowdfunding y presentación del proyecto Ethic Hub
 attendees: 24
 slides: 
-   - description: Intro conceptos básicos Blockchain (Gabriela)
-     url: https://docs.google.com/presentation/d/1SoI6Ag9wXWqRTxwsit2e34zELvVu-Eec5bBAgRGo-8E/edit?usp=sharing
-   - description: Bitcoin (Íñigo)
-     url: https://drive.google.com/file/d/1r6-DJBXDGRKVED5QizsDzvqp85DYYzOi/view?usp=sharing
-   - description: Ethic Hub (Jori)
-     url: https://drive.google.com/file/d/1UWumdSk8VnROx7GU3IubcThXEVImgDSS/view?usp=sharing
+    - description: Intro conceptos básicos Blockchain (Gabriela)
+      url: https://docs.google.com/presentation/d/1SoI6Ag9wXWqRTxwsit2e34zELvVu-Eec5bBAgRGo-8E/edit?usp=sharing
+    - description: Presentación Bitcoin (Íñigo)
+      url: https://drive.google.com/file/d/1r6-DJBXDGRKVED5QizsDzvqp85DYYzOi/view?usp=sharing
+    - description: Presentación Ethic Hub (Jori)
+      url: https://drive.google.com/file/d/1UWumdSk8VnROx7GU3IubcThXEVImgDSS/view?usp=sharing
 images:
     - src: /web/assets/images/meetups/2018-02-05-blockchain-ethic-hub-toledo/ethic-hub-toledo.jpeg
       width: 800

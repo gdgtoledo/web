@@ -904,6 +904,51 @@ h6 {
   margin-right: 0;
 }
 
+
+
+.meetup__resources {
+  margin-top: 60px;
+}
+
+.meetup__resources__header {
+  font-family: var(--font-family-helvetica);
+  font-weight: var(--text-weight-bold);
+  font-size: var(--text-size-2xl);
+  color: var(--text-color-gray-s);
+  font-style: normal;
+  margin-bottom: 40px;
+}
+
+.meetup__resources__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.meetup__resources__list_video_bullet {
+  list-style-image: url('/web/assets/images/icons/video.svg');
+}
+.meetup__resources__list_slides_bullet {
+  list-style-image:url('/web/assets/images/icons/sildes.svg');
+}
+.meetup__resources__list_code_bullet {
+  list-style-image:url('/web/assets/images/icons/code.svg');
+}
+
+
+.meetup__resource {
+  list-style: none;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  width: 20vw;
+}
+
+
+
+
+
 /*            *\
 |              |
 |    meetups   |

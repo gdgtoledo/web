@@ -1,17 +1,20 @@
 ---
 layout: meetup
-title: Jekyll, No hagas complicado lo que es sencilo
+title: Jekyll, No hagas complicado lo que es sencillo
 date: 2017-10-26 19:00:00
 speaker:
   name: Javier López de Ancos
   url: members/javier-lopez-de-ancos-html
 description: Introducción a el generador de sitios web estáticos "jekyll".
 attendees: 9
-slides: http://www.setHereUrl
-code: http://www.setHereUrl
-video: http://www.youtube.com/setHereUrl
+slides: 
+    - description: Presentación utilizada en el meetup
+      url: http://www.setHereUrl
+coderepos: 
+    - description: Repositorio de código
+      url: http://www.setHereUrl
 images:
-    - src: /assets/images/meetups/2017-10-26-jekyll-no-compliques-lo-que-es-sencillo/javi.jpg
+    - src: /web/assets/images/meetups/2017-10-26-jekyll-no-compliques-lo-que-es-sencillo/javi.jpg
       width: 800
       height: 1067
       horientation: vertical
