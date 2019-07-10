@@ -10,7 +10,7 @@ attendees: 9
 slides: 
    - description: Presentación utilizada en el meetup
      url: https://github.com/rafagarcia/vueling
-codes: 
+coderepos: 
    - description: Repositorio de código en GitHub
      url: https://github.com/rafagarcia/vueling
 images:
