@@ -14,7 +14,7 @@ coderepos:
     - description: Repositorio de código
       url: http://www.setHereUrl
 images:
-    - src: /assets/images/meetups/2017-10-26-jekyll-no-compliques-lo-que-es-sencillo/javi.jpg
+    - src: /web/assets/images/meetups/2017-10-26-jekyll-no-compliques-lo-que-es-sencillo/javi.jpg
       width: 800
       height: 1067
       horientation: vertical

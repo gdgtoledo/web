@@ -12,9 +12,6 @@ highlighter: 'rouge'
 plugins:
   - 'jekyll-paginate-v2'
 
-paginate: nil
-paginate_path: '/legacy/page:num/'
-
 pagination:
   enabled: true
   per_page: 10
