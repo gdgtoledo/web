@@ -8,9 +8,9 @@ description: Stop Starting Start finishing, una introducción a Kanban
 attendees: 14
 slides: 
     - description: Diapositivas usadas por Manu
-      url: http://www.setHereUrl
+      url: https://es.slideshare.net/ManueldelaPeaPea/kanban-77199417
     - description: Diapositivas usadas por Antonio
-      url: http://www.setHereUrl
+      url: https://es.slideshare.net/AntonioCrespoVelasco/trying-kanban-77197121
 images:
     - src: /web/assets/images/meetups/2017-06-22-stop-starting-start-finishing-una-introduccion-a-kanban/antonio.jpeg
       width: 800
