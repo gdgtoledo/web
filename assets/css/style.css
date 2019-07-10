@@ -930,24 +930,18 @@ h6 {
 .meetup__resources__list_video_bullet {
   list-style-image: url('/web/assets/images/icons/video.svg');
 }
-.meetup__resources__list_slides_bullet {
+.meetup__resources__list_slide_bullet {
   list-style-image:url('/web/assets/images/icons/sildes.svg');
 }
 .meetup__resources__list_code_bullet {
   list-style-image:url('/web/assets/images/icons/code.svg');
 }
 
-
 .meetup__resource {
-  list-style: none;
   margin-right: 40px;
   margin-bottom: 40px;
   width: 20vw;
 }
-
-
-
-
 
 /*            *\
 |              |
