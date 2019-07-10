@@ -5,7 +5,5 @@ title: Créditos
 
 ## Iconos
 
-- Video icon by Kuber from the [Noun Project](https://thenounproject.com/term/video/966159#)
-- Projection Screen code icon by Rockicon from the [Noun Project](https://thenounproject.com/term/projection-screen-code/515310/#)
-- coding icon by Graphic Tigers from the [Noun Project](https://thenounproject.com/term/coding/2309592/)
+- Usamos [Google Material icons](), distribuidos bajo licencia [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
 

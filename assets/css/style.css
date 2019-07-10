@@ -928,13 +928,13 @@ h6 {
 }
 
 .meetup__resources__list_video_bullet {
-  list-style-image: url('/web/assets/images/icons/video.svg');
+  list-style-image: url('/web/assets/images/icons/video.png');
 }
 .meetup__resources__list_slide_bullet {
-  list-style-image:url('/web/assets/images/icons/sildes.svg');
+  list-style-image:url('/web/assets/images/icons/slide.png');
 }
 .meetup__resources__list_code_bullet {
-  list-style-image:url('/web/assets/images/icons/code.svg');
+  list-style-image:url('/web/assets/images/icons/code.png');
 }
 
 .meetup__resource {
