@@ -14,7 +14,7 @@ codes:
    - description: Repositorio de código en GitHub
      url: https://github.com/rafagarcia/vueling
 images:
-    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/rafa-explicando.jpg
+    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/rafa-explicando.jpg
       width: 600
       height: 450
       horientation: horizontal
@@ -24,12 +24,12 @@ images:
       height: 450
       horientation: horizontal
       alt: Rafa explicando vue mas de cerca
-    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/ceramica.jpg
+    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/ceramica.jpg
       width: 600
       height: 450
       horientation: horizontal
       alt: Visita a taller cerámico
-    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/ceramica2.jpg
+    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/ceramica2.jpg
       width: 600
       height: 450
       horientation: horizontal
@@ -39,7 +39,7 @@ images:
       height: 450
       horientation: horizontal
       alt: Imagen de la cabeza de Mazinguer Z en cerámica
-    - src: /web/assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/menu.jpg
+    - src: /assets/images/meetups/2017-12-02-vueling-aprendiendo-vue/menu.jpg
       width: 450
       height: 600
       horientation: vertical
