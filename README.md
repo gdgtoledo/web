@@ -61,7 +61,7 @@ Para añadir una página con información relativa a un meetup, sigue los siguie
 
   1. Crear una rama en la que trabajar, por ejemplo: `git checkout -b myMeetup`
   2. Localiza la carpeta `_meetups`
-  3. Crea un nuevo fichero con extensión `.md` o puedes copiar unno ya existente, pero adapta el nombre del fichero para que no exista confusión. El formato de la fecha en el nombre del fichero es `AAAA-MM-DD`, seguido del nombre del meetup.
+  3. Crea un nuevo fichero con extensión `.md` o puedes copiar uno ya existente, pero adapta el nombre del fichero para que no exista confusión. El formato de la fecha en el nombre del fichero es `AAAA-MM-DD`, seguido del nombre del meetup.
   4. Añadir información al fichero en el formato adecuado para que Jekyll pueda leerla correctamente, puedes copiar los campos de otro fichero.
   5. Guarda los cambios `git add -A && git commit -m "My meetup info"`
   6. Solicita Pull Request con la rama modificada.
