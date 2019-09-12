@@ -30,7 +30,7 @@ gem install jekyll bundler
 Completada la instalación solo tendremos que bundle y servir lanzar el servidor local con:
 
 ```shell
-bundle exec jekyll serve`
+bundle exec jekyll serve
 ```
 
 y abrir el browser en `http://localhost:4000`

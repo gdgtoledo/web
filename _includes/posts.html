@@ -11,7 +11,7 @@
     <div class="posts__list">
         {% if include.limit %}
             {% for post in site.posts limit:4 %}
-                <article class="post">
+                <article class="post post_short">
                     <section class="post__info">
                         <a class="post__title" href="{{ "/" | relative_url  }}{{ post.url | remove_first: '/' }}" >
                             {{ post.title }}
@@ -23,12 +23,14 @@
         {% else %}
             {% for post in paginator.posts %}
                 <article class="post">
-                    <section class="post__info">
-                        <a class="post__title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                        <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
-                    </section>
+                    <div class="post__head">
+                        <section class="post__info">
+                            <a class="post__title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                            <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
+                        </section>
+                    </div>
                     <section class="post__description">
-                        <a class="post__description" href="{{ post.url }}" >
+                        <a class="post__link" href="{{ post.url }}" >
                             {{ post.description }}
                         </a>
                     </section>
