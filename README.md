@@ -1,6 +1,6 @@
 # Web del grupo GDG Toledo
 
-## Creación de entorno local
+## 🚀 Creación de entorno local
 
 ### A pelo
 
@@ -35,7 +35,6 @@ bundle exec jekyll serve
 
 y abrir el browser en `http://localhost:4000`
 
-
 ### Con Docker
 
 Si tienes Docker instalado en el sistema, accede a la raíz del proyecto y podrás optar por las siguientes opciones:
@@ -51,6 +50,28 @@ docker-compose up --build
 export JEKYLL_VERSION=3.8
 docker run --rm \
   --volume="$PWD:/srv/jekyll" \
-  -it jekyll/minimal:$JEKYLL_VERSION \
+  -it jekyll/builder:$JEKYLL_VERSION \
   jekyll build
 ````
+
+## 🔧 Develop
+
+### Meetups
+Para añadir una página con información relativa a un meetup, sigue los siguientes pasos:
+
+  1. Crea una rama en la que trabajar, por ejemplo: `git checkout -b myMeetup`
+  2. Localiza la carpeta `_meetups`
+  3. Crea un nuevo fichero con extensión `.md` o puedes copiar uno ya existente, pero adapta el nombre del fichero para que no exista confusión. El formato de la fecha en el nombre del fichero es `AAAA-MM-DD`, seguido del nombre del meetup.
+  4. Añade información al fichero en el formato adecuado para que Jekyll pueda leerla correctamente, puedes copiar los campos de otro fichero.
+  5. Guarda los cambios `git add -A && git commit -m "My meetup info"`
+  6. Solicita Pull Request con la rama modificada.
+
+### Miembros
+Para añadir una página con información relativa a un miembro nuevo, sigue los siguientes pasos:
+
+  1. Crea una rama en la que trabajar, por ejemplo: `git checkout -b myInfo`
+  2. Localiza la carpeta `_members`
+  3. Crea un nuevo fichero con extensión `.md` o puedes copiar uno ya existente, pero adapta el nombre del fichero para que no exista confusión.
+  4. Añade información al fichero en el formato adecuado para que Jekyll pueda leerla correctamente, puedes copiar los campos de otro fichero.
+  5. Guarda los cambios `git add -A && git commit -m "My info"`
+  6. Solicita Pull Request con la rama modificada.
