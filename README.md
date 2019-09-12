@@ -35,7 +35,6 @@ bundle exec jekyll serve`
 
 y abrir el browser en `http://localhost:4000`
 
-
 ### Con Docker
 
 Si tienes Docker instalado en el sistema, accede a la raíz del proyecto y podrás optar por las siguientes opciones:
