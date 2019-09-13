@@ -55,6 +55,10 @@ navigation:
     title: 'posts'
     weight: 3
 
+  - url: '/credits'
+    title: 'credits'
+    weight: 3
+
 google_analytics: 'UA-XXXXXXXX-X'
 
 disqus: true
