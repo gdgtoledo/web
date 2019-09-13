@@ -11,22 +11,38 @@
     <div class="meetups__list">
         {% if include.limit %}
             {% for meetup in site.meetups limit:4 %}
-                <article class="meetup">
+                <article class="meetup meetup__short">
                     <section class="meetup__info">
                         <a class="meetup__title" href="{{ "/" | relative_url  }}{{ meetup.url | remove_first: '/' }}" >
                             {{ meetup.title }}
                         </a>
-                        <aside class="meetup__date">{{ meetup.date | date:"%b %d" }} | {{ meetup.attendees }} asistentes</aside>
+                        <aside class="meetup__date">
+                            <span>
+                                {{ meetup.date | date:"%b %d" }}
+                            </span>
+                            <span class="meetup__attendees">
+                                {{ meetup.attendees }} asistentes
+                            </span>
+                        </aside>
                     </section>
                 </article>
             {% endfor %}
         {% else %}
             {% for meetup in paginator.posts %}
                 <article class="meetup">
-                    <section class="meetup__info">
-                        <a class="meetup__title" href="{{ meetup.url | relative_url }}">{{ meetup.title | escape }}</a>
-                        <aside class="meetup__date">{{ meetup.date | date:"%b %d" }} | {{ meetup.attendees }} asistentes</aside>
-                    </section>
+                    <div class="meetup__head">
+                        <section class="meetup__info">
+                            <a class="meetup__title" href="{{ meetup.url | relative_url }}">{{ meetup.title | escape }}</a>
+                            <aside class="meetup__date">
+                                <span>
+                                    {{ meetup.date | date:"%b %d" }}
+                                </span>
+                                <span class="meetup__attendees">
+                                    {{ meetup.attendees }} asistentes
+                                </span>
+                            </aside>
+                        </section>
+                    </div>
                     <section class="meetup__speaker">
                         <a class="meetup__speaker-name" href="{{ meetup.url }}" >
                             {{ meetup.speaker.name }}

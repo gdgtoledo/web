@@ -548,6 +548,7 @@ h2.month {
 
 :root {
   --font-family-helvetica:  "Helvetica Neue",helvetica,Arial,sans-serif;
+  --font-family-rubik: 'Rubik', sans-serif;
 }
 
 /*            *\
@@ -563,7 +564,7 @@ html {
 html, body { height: 100%; }
 
 body {
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-normal);
   font-size: var(--text-size-root);
   color: var(--text-color-gray-m);
@@ -593,7 +594,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
 }
 
 /*            *\
@@ -722,7 +723,7 @@ h6 {
 .post__header h2,
 .meetup__header h2,
 .member__header h2 {
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-2xl);
   color: var(--text-color-gray-s);
@@ -732,7 +733,7 @@ h6 {
 .post__header h3,
 .meetup__header h3,
 .member__header h3 {
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
   font-size: var(--text-size-s);
   font-weight: var(--text-weight-bold);
   color: var(--text-color-gray-xs);
@@ -784,7 +785,7 @@ h6 {
 
 .post__body p,
 .meetup__body p  {
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-normal);
   font-size: var(--text-size-l);
   color: var(--text-color-gray-m);
@@ -792,7 +793,7 @@ h6 {
 
 .post__body a,
 .meetup__body a {
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-bold);
   color: var(--text-color-gray-s);
   border-bottom: 4px solid var(--color-secondary);
@@ -824,7 +825,7 @@ h6 {
 .meetup__body h5,
 .post__body h6,
 .meetup__body h6 {
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-bold);
   color: var(--text-color-black);
 }
@@ -877,7 +878,7 @@ h6 {
 }
 
 .meetup__images__header {
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-2xl);
   color: var(--text-color-gray-s);
@@ -952,19 +953,24 @@ h6 {
 \*            */
 
 .meetups,
-.posts {
+.posts,
+.join-us {
   margin-bottom: 10vh;
+  margin-top: 15vh;
 }
 
 .meetups__header,
 .posts__header,
-.members__header {
+.members__header,
+.join-us__header {
   margin-bottom: 4vh;
+  font-weight: var(--text-weight-medium);
 }
 
 .meetups__list,
 .posts__list,
-.members__list {
+.members__list,
+.join-us__list {
   margin-bottom: 40px;
 }
 
@@ -980,17 +986,64 @@ h6 {
   margin: 0;
 }
 
+.meetups__list .meetup
+.posts__list .post {
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 0.5fr;
+  grid-template-areas:
+    "list-item-speaker";
+  margin-bottom: 1vw;
+}
+
 .meetups__list .meetup__info,
 .posts__list .post__info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  grid-area: list-item-info;
+  display: grid;
+  grid-template-columns:30px auto 8fr auto;
+  grid-template-areas: "point label empty info";
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.join-us__list .join-us__info {
+  display: grid;
+  grid-template-columns: 30px auto 10fr;
+  grid-template-areas: "point label empty";
+  grid-template-rows: 55px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-bottom: 0.4vw;
+}
+
+.meetups__list .meetup__info:before,
+.posts__list .post__info:before,
+.join-us__list .join-us__info:before {
+  content: "■";
+  color: var(--color-quaternary);
+  padding-right: 10px;
+  padding-top: 15px;
+  font-size: var(--text-size-xl);
+  grid-area: point;
+}
+
+.meetups__list .meetup__info:hover:before,
+.posts__list .post__info:hover:before,
+.join-us__list .join-us__info:hover:before {
+  display: none;
 }
 
 .meetups__list .meetup__info:hover,
 .posts__list .post__info:hover {
   cursor: pointer;
+  grid-template-columns: auto 6fr auto;
+  grid-template-areas: "label empty info";
+}
+
+.join-us__list .join-us__info:hover {
+  cursor: pointer;
+  grid-template-columns: auto 10fr;
+  grid-template-areas: "label empty";
 }
 
 .meetups__list .meetup__info:hover .meetup__title,
@@ -1000,53 +1053,78 @@ h6 {
   text-decoration: none;
   color: var(--text-color-gray-l);
   background-color: var(--color-tertiary);
-  padding: 15px 15px 15px 15px;
 }
 
 .meetups__list .meetup__info:hover .meetup__title,
-.posts__list .post__info:hover .post__title {
+.posts__list .post__info:hover .post__title,
+.join-us__list .join-us__info:hover .join-us__link {
   background-color: var(--color-secondary);
   color: var(--text-color-white);
+  padding: 15px;
+  font-weight: var(--text-weight-bold);
 }
 
-.meetups__list .meetup__info:hover + .meetup__speaker .meetup__speaker-name,
-.posts__list .post__info:hover + .post__description .post__description {
+.meetups__list .meetup__info .meetup__date {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.meetups__list .meetup__info .meetup__attendees {
+  display: none;
+  font-size: var(--text-size-l);
+  margin-left: 20px;
+}
+
+.meetups__list .meetup__info:hover .meetup__attendees {
+  display: block;
+}
+
+.meetups__list .meetup:not(.meetup__short):hover,
+.posts__list .post:not(.post__short):hover {
+  margin-top:  20px;
+  margin-bottom: 20px;
+}
+
+.meetups__list .meetup__head:hover + .meetup__speaker .meetup__speaker-name,
+.posts__list .post__head:hover + .post__description .post__link {
   background-color: var(--text-color-quaternary);
   color: var(--text-color-white);
-  padding: 15px 15px 15px 15px;
+  padding: 15px;
 }
 
 .meetups__list .meetup__info .meetup__title,
-.posts__list .post__info .post__title {
+.posts__list .post__info .post__title,
+.join-us__list .join-us__info .join-us__link {
   padding: 15px 15px 0 0;
-  font-family: var(--font-family-helvetica);
-  font-weight: var(--text-weight-bold);
+  font-family: var(--font-family-rubik);
+  font-weight: var(--text-weight-medium);
   font-size: var(--text-size-xl);
   color: var(--text-color-gray-s);
-  background-color: var(--color-white);
-  transition: all 0.15s ease;
+  /*transition: all 0.15s ease;*/
+  grid-area: label;
 }
 
 .meetups__list .meetup__date,
 .posts__list .post__date {
   padding: 15px;
-  font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-xl);
   color: var(--text-color-gray-2xs);
+  grid-area: info;
 }
 
-.meetups__list .meetup__speaker {
+.meetups__list .meetup__speaker,
+.posts__list .post__description {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .meetups__list .meetup__speaker-name,
-.posts__list .post__description {
-  padding: 15px 15px 15px 0;
-  font-family: var(--font-family-helvetica);
+.posts__list .post__description .post__link {
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-bold);
   font-size: var(--text-size-m);
   color: var(--text-color-gray-xs);
@@ -1056,16 +1134,25 @@ h6 {
 
 .meetups__footer,
 .posts__footer {
-  margin-top: 15px;
+  margin-top: 65px;
 }
 
 .meetups__footer .meetups__show-more,
 .posts__footer .posts__show-more {
-  padding: 10px;
-  font-family: var(--font-family-helvetica);
+  padding: 20px 10px;
+  font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-extra-bold);
-  font-size: var(--text-size-s);
+  font-size: var(--text-size-m);
   color: var(--text-color-primary);
+  border: 4px var(--color-primary) solid;
+  background-color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.meetups__footer .meetups__show-more:hover,
+.posts__footer .posts__show-more:hover {
+  background-color: var(--text-color-primary);
+  color: var(--text-color-white);
   border: 4px var(--color-primary) solid;
 }
 
@@ -1149,19 +1236,20 @@ h6 {
 
 .navigation__link {
   padding: 10px;
-  font-family: var(--font-family-helvetica);
-  font-weight: var(--text-weight-extra-bold);
+  font-family: var(--font-family-rubik);
+  font-weight: var(--text-weight-bold);
   font-size: var(--text-size-m);
   color: var(--text-color-primary);
+  text-transform: uppercase;
   transition: all 0.15s ease;
 }
 
 .navigation__link__active {
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   color: var(--text-color-white);
 }
 
 .navigation__link:hover {
-  background: var(--color-primary-dark);
+  background: var(--color-primary);
   color: var(--text-color-white);
 }
