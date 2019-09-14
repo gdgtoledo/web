@@ -61,13 +61,12 @@ Para añadir una página con información relativa a un meetup, sigue los siguie
 
   1. Crea una rama en la que trabajar, por ejemplo: `git checkout -b myMeetup`
   2. Localiza la carpeta `_meetups`
-    3. Copia el fichero llamado `1900-01-01-meetup-event-name.md`, pégalo en el mismo directorio, y sigue los siguientes pasos:
-           1. Renombra el fichero cambiando la fecha por la del meetup seguida del nombre del mismo, teniendo en cuenta que el nombre del fichero será usado como URL
-           2. Edita el fichero y cambia las propiedades del _front matter_ con la información del meetup (no toques `layout: meetup`)
-           3. En la sección de contenido, donde pone `Lorem ipsum...` refleja la descripción del meetup y otra información que consideres relevante
-           4. Borra la propiedad `published: false` del _front matter_ o cámbiala a `true`
-    4. Guarda los cambios y sube al repo `git add -A && git commit -m "My meetup info"`
-    5. Solicita Pull Request con la rama modificada.
+  3. Copia el fichero llamado `1900-01-01-meetup-event-name.md`, pégalo en el mismo directorio y renómbralo cambiando la fecha por la del meetup seguida del nombre del mismo, teniendo en cuenta que el nombre del fichero será usado como URL
+  4. Edita el fichero y cambia las propiedades del _front matter_ con la información del meetup (no toques `layout: meetup`)
+  5. En la sección de contenido, donde pone `Lorem ipsum...` refleja la descripción del meetup y otra información que consideres relevante
+  6. Borra la propiedad `published: false` del _front matter_ o cámbiala a `true`
+  7. Guarda los cambios y sube al repo `git add -A && git commit -m "My meetup info"`
+  8. Solicita Pull Request con la rama modificada.
 
 ### Miembros
 Para añadir una página con información relativa a un miembro nuevo, sigue los siguientes pasos:
