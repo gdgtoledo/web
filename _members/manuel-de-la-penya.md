@@ -2,10 +2,10 @@
 layout: member
 name: Manuel
 last_name: de la Peña
-description: Software Engineer
+description: Software Engineer, QA Lover
 company:
-    name: Liferay Inc
-    url: https://www.liferay.com/
+    name: Elastic
+    url: https://www.elastic.co/
 city: Toledo
 twitter: mdelapenya
 github: mdelapenya
