@@ -10,7 +10,8 @@
 
     <div class="meetups__list">
         {% if include.limit %}
-            {% for meetup in site.meetups limit:4 %}
+		    {% assign sorted_meetups = (site.meetups | sort: 'date') | reverse %}
+            {% for meetup in sorted_meetups limit:4 %}
                 <article class="meetup meetup__short">
                     <section class="meetup__info">
                         <a class="meetup__title" href="{{ "/" | relative_url  }}{{ meetup.url | remove_first: '/' }}" >
@@ -18,27 +19,22 @@
                         </a>
                         <aside class="meetup__date">
                             <span>
-                                {{ meetup.date | date:"%b %d" }}
-                            </span>
-                            <span class="meetup__attendees">
-                                {{ meetup.attendees }} asistentes
+                                {{ meetup.date | date:"%b %d, %Y"}} ({{ meetup.attendees }} asistentes)
                             </span>
                         </aside>
                     </section>
                 </article>
             {% endfor %}
         {% else %}
-            {% for meetup in paginator.posts %}
+			{% assign sorted_meetups = (paginator.posts | sort: 'date') | reverse %}
+            {% for meetup in sorted_meetups %}
                 <article class="meetup">
                     <div class="meetup__head">
                         <section class="meetup__info">
                             <a class="meetup__title" href="{{ meetup.url | relative_url }}">{{ meetup.title | escape }}</a>
                             <aside class="meetup__date">
                                 <span>
-                                    {{ meetup.date | date:"%b %d" }}
-                                </span>
-                                <span class="meetup__attendees">
-                                    {{ meetup.attendees }} asistentes
+                                    {{ meetup.date | date:"%b %d, %Y" }} ({{ meetup.attendees }} asistentes)
                                 </span>
                             </aside>
                         </section>
