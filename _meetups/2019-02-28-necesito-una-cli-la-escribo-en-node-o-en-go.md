@@ -2,13 +2,16 @@
 layout: meetup
 title: Necesito una CLI, ¿la escribo en Node o en Go?
 date: 2019-02-28 19:00:00
-attendees: 666
+attendees: 12
 description: ¿Qué es una CLI? ¿Qué uso se les suele dar? Cómo implementarlo en NodeJS y en Golang.
 speaker:
   name: Javier de Ancos y Manuel de la Peña
 meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/258727635/
+coderepos: 
+    - description: Repositorio en GitHub con el código mostrado
+      url: https://github.com/gdgtoledo/nodeGoCLI
 ---
 
 ## ¿Qué vamos a ver?
