@@ -7,8 +7,8 @@ date: 2019-06-08 11:00
 attendees: 21
 description: Primeros pasos con Google Cloud y las APIs de Machine Learning siguiendo la formación oficial de Google
 meetupinfo:
-    - description: Evento en meetup.com
-      url: https://www.meetup.com/es-ES/gdgtoledo_es/events/261681445/
+  description: Evento en meetup.com
+  url: https://www.meetup.com/es-ES/gdgtoledo_es/events/261681445/
 images:
     - src: /web/assets/images/meetups/2019-06-08-cloud-study-jam-machine-learning-apis/wellcome-manu.jpg
       width: 800

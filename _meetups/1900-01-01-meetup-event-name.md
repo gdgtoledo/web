@@ -7,6 +7,9 @@ description: Event description
 speaker:
   name: Jhon Doe
   url: members/jhon-doe
+meetupinfo:
+  description: Evento en meetup.com
+  url: http://www.setHereUrl
 slides: 
     - description: Slide description
       url: http://www.setHereUrl
