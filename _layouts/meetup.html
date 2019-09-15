@@ -11,33 +11,39 @@ archive: true
         <header class="meetup__header">
             <h1>{{ page.title }}</h1>
             <h2>{{ page.description }}</h2>
+			<h3>{{ page.speaker.name }}</h3>
             <h3>{{ page.date | date:"%B %-d, %Y" }} | {{ page.attendees }} asistentes</h3>
         </header>
         <section class="meetup__body">
             <p>{{ content }}</p>
         </section>
-        {% if page.slides or page.coderepos or page.videos %}
+        {% if page.slides or page.coderepos or page.videos or page.meetupinfo %}
             <section class="meetup__resources">
                 <h2 class="meetup__resources__header">Recursos usados en el meetup</h2>
                 <ul  class="meetup__resources__list">
+                    {% if page.meetupinfo %}
+						<li class="meetup__resource meetup__resources__list_meetup_bullet">
+							<a href="{{ page.meetupinfo.url }}" target="_blank">{{ page.meetupinfo.description }}</a>
+						</li>
+                    {% endif %}
                     {% if page.slides %}
 						{% for slide in page.slides %}
 							<li class="meetup__resource meetup__resources__list_slide_bullet">
-								<a href="{{ slide.url }}">{{ slide.description }}</a>
+								<a href="{{ slide.url }}" target="_blank">{{ slide.description }}</a>
 							</li>
 						{% endfor %}
                     {% endif %}
                     {% if page.coderepos %}
 						{% for coderepo in page.coderepos %}
 							<li class="meetup__resource meetup__resources__list_code_bullet">
-								<a href="{{ coderepo.url }}">{{ coderepo.description }}</a>
+								<a href="{{ coderepo.url }}" target="_blank">{{ coderepo.description }}</a>
 							</li>
 						{% endfor %}
                     {% endif %}
                     {% if page.videos %}
 						{% for video in page.videos %}
 							<li class="meetup__resource meetup__resources__list_video_bullet">
-								<a href="{{ video.url }}">{{ video.description }}</a>
+								<a href="{{ video.url }} target="_blank"">{{ video.description }}</a>
 							</li>
 						{% endfor %}
                     {% endif %}
