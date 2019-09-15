@@ -2,11 +2,11 @@
 layout: meetup
 title: Document title
 date: 1900-01-01 19:00:00
+attendees: 666
+description: Event name (repeat title)
 speaker:
   name: Jhon Doe
   url: members/jhon-doe
-description: Event name
-attendees: 666
 slides: 
     - description: Slide description
       url: http://www.setHereUrl
