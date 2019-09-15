@@ -7,6 +7,9 @@ description: Introducción a la observabilidad con el stack de Elastic
 speaker:
   name: Manuel de la Peña
   url: members/manuel-de-la-penya
+meetup:
+    - url: https://www.meetup.com/es-ES/gdgtoledo_es/events/263866205/
+    - description: Evento en meetup.com
 slides: 
     - description: Introduction to observability with Elastic Stack
       url: http://www.setHereUrl
