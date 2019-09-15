@@ -10,6 +10,7 @@ speaker:
 meetupinfo:
   description: Evento en meetup.com
   url: http://www.setHereUrl
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 slides: 
     - description: Slide description
       url: http://www.setHereUrl
