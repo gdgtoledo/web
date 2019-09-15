@@ -9,6 +9,7 @@ description: Resumen y síntesis de ejemplos de buenas y malas prácticas a la h
 meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/259909978
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 slides: 
     - description: Diapositivas usadas en la charla
       url: http://www.slideshare.net/loaisa/clean-architectures-extended

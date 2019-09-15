@@ -9,6 +9,7 @@ speaker:
 meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/260624918/
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 images:
     - src: /web/assets/images/meetups/2019-04-25-groogleando-voy\presentacion-jorge-aguilera.jpg
       width: 800

@@ -9,6 +9,7 @@ description: Primeros pasos con Google Cloud y las APIs de Machine Learning sigu
 meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/261681445/
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 images:
     - src: /web/assets/images/meetups/2019-06-08-cloud-study-jam-machine-learning-apis/wellcome-manu.jpg
       width: 800

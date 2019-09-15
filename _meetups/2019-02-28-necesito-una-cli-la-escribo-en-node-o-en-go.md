@@ -9,6 +9,7 @@ speaker:
 meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/258727635/
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 coderepos: 
     - description: Repositorio en GitHub con el código mostrado
       url: https://github.com/gdgtoledo/nodeGoCLI

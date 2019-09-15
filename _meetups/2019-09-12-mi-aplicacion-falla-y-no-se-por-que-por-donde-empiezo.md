@@ -10,6 +10,7 @@ speaker:
 meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/263866205/
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 slides: 
     - description: Introduction to observability with Elastic Stack
       url: http://www.setHereUrl

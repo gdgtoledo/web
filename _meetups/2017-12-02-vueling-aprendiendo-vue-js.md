@@ -7,6 +7,10 @@ speaker:
   url: members/rafael-garcia-html
 description: Introducción al framework de moda en javascript vue.js
 attendees: 9
+meetupinfo:
+  description: Evento en meetup.com
+  url: https://www.meetup.com/es-ES/gdgtoledo_es/events/244750367/
+  location: Cámara de Comercio de Talavera de la Reina
 slides: 
    - description: Presentación utilizada en el meetup
      url: https://github.com/rafagarcia/vueling
