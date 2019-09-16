@@ -3,8 +3,8 @@
   <channel>
     <title>GDG Toledo</title>
     <description>El espíritu de este grupo es fomentar y compartir las buenas prácticas y las experiencias en herramientas, frameworks, lenguajes, etc</description>
-    <link>https://gdgtoledo.github.io/web</link>
-    <atom:link href="https://gdgtoledo.github.io/web/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://0.0.0.0:4000</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Hola Mundo</title>
@@ -16,9 +16,9 @@ eran risas y pegatinas?&lt;/p&gt;
 
 </description>
         
-        <pubDate>Sun, 10 Nov 2013 04:18:00 -0600</pubDate>
-        <link>https://gdgtoledo.github.io/web/posts/2013-11-10-hola-mundo/</link>
-        <guid isPermaLink="true">https://gdgtoledo.github.io/web/posts/2013-11-10-hola-mundo/</guid>
+        <pubDate>Sun, 10 Nov 2013 10:18:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/posts/2013-11-10-hola-mundo/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/posts/2013-11-10-hola-mundo/</guid>
       </item>
     
   </channel>
