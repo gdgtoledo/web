@@ -1,0 +1,10 @@
+#docker-compose up -d to run in dettach mode
+version: '3'
+
+services:
+  jekyll:
+      build: .
+      ports:
+          - 4000:4000
+      volumes:
+          - .:/site
