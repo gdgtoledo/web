@@ -1,6 +1,5 @@
 TODO si al final hay que subir el _site entero, debido a la incompatibilidad de pagintae-v2 con github pages, hayq ue automatizar el build.
 
-
 # Web del grupo GDG Toledo
 
 ## 🚀 Creación de entorno local
