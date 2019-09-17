@@ -5,6 +5,7 @@ meta_description: 'GDG Toledo'
 domain_name: 'https://gdgtoledo.github.io'
 
 aboutPage: false
+destination: docs
 
 markdown: 'kramdown'
 highlighter: 'rouge'
