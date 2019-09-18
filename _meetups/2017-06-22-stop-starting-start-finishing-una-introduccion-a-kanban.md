@@ -6,6 +6,10 @@ speaker:
   name: Manuel de la Peña y Antonio Crespo
 description: Stop Starting Start finishing, una introducción a Kanban
 attendees: 14
+meetupinfo:
+  description: Evento en meetup.com
+  url: https://www.meetup.com/es-ES/gdgtoledo_es/events/240752637/
+  location: Biblioteca de Castilla-La Mancha
 slides: 
     - description: Diapositivas usadas por Manu
       url: https://es.slideshare.net/ManueldelaPeaPea/kanban-77199417

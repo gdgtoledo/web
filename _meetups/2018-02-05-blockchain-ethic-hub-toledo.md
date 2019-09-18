@@ -6,6 +6,10 @@ speaker:
     name: Jori Armbruster, Gabriela Chang e Íñigo Molero
 description: Introducción a blockchain, el corowdfunding y presentación del proyecto Ethic Hub
 attendees: 24
+meetupinfo:
+  description: Evento en meetup.com
+  url: https://www.meetup.com/es-ES/gdgtoledo_es/events/247311022/
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 slides: 
     - description: Intro conceptos básicos Blockchain (Gabriela)
       url: https://docs.google.com/presentation/d/1SoI6Ag9wXWqRTxwsit2e34zELvVu-Eec5bBAgRGo-8E/edit?usp=sharing

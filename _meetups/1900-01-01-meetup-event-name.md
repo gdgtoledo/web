@@ -2,11 +2,15 @@
 layout: meetup
 title: Document title
 date: 1900-01-01 19:00:00
+attendees: 666
+description: Event description
 speaker:
   name: Jhon Doe
   url: members/jhon-doe
-description: Event name
-attendees: 666
+meetupinfo:
+  description: Evento en meetup.com
+  url: http://www.setHereUrl
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 slides: 
     - description: Slide description
       url: http://www.setHereUrl
