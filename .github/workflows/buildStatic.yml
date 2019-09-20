@@ -1,0 +1,14 @@
+name: Build Static
+
+on: [push]
+
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: docker://jekyll:latest
+    - name: Build static content with docker instruction
+      run: export JEKYLL_VERSION=3.8 && docker run --rm --volume="$PWD:/srv/jekyll" -it jekyll/builder:$JEKYLL_VERSION jekyll build
