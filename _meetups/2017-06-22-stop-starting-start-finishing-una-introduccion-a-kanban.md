@@ -1,7 +1,7 @@
 ---
 layout: meetup
 title: Stop Starting Start finishing, una introducción a Kanban
-date: 2018-06-22 19:00:00
+date: 2017-06-22 19:00:00
 speaker:
   name: Manuel de la Peña y Antonio Crespo
 description: Stop Starting Start finishing, una introducción a Kanban
