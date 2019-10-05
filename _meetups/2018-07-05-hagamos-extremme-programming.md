@@ -6,6 +6,10 @@ speaker:
   name: José Julián Ariza
 description: Hagamos eXtreme Programming
 attendees: 7
+meetupinfo:
+  description: Evento en meetup.com
+  url: https://www.meetup.com/es-ES/gdgtoledo_es/events/252267388/
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 videos: 
     - description: Grabación del meetup
       url: https://youtu.be/6TKl8-ffXac

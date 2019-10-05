@@ -7,6 +7,10 @@ speaker:
   url: members/javier-lopez-de-ancos-html
 description: Introducción a el generador de sitios web estáticos "jekyll".
 attendees: 9
+meetupinfo:
+  description: Evento en meetup.com
+  url: https://www.meetup.com/es-ES/gdgtoledo_es/events/244448958/
+  location: Coworking Cámara de Comercio Santa María de Benquerencia
 slides: 
     - description: Presentación utilizada en el meetup
       url: http://www.setHereUrl

@@ -934,6 +934,9 @@ h6 {
 .meetup__resources__list_slide_bullet {
   list-style-image:url('/web/assets/images/icons/slide.png');
 }
+.meetup__resources__list_meetup_bullet {
+  list-style-image:url('/web/assets/images/icons/group.png');
+}
 .meetup__resources__list_code_bullet {
   list-style-image:url('/web/assets/images/icons/code.png');
 }
