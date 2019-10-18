@@ -21,13 +21,20 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        #Remove local and remote branch
+        git branch -D docs_build &>/dev/null || true
+        git push origin --delete docs_build &>/dev/null || true
+        
+        #Create branch that will server as the source of the PR
         git checkout -b docs_build
         git config --global user.name "${GITHUB_ACTOR}"
         git config --global user.email "${GITHUB_ACTOR}users.noreply.github.com"
         git add -A
-        git commit -m "Automated docs build" --allow-empty
+        git commit -m "Automated docs build ${version}" --allow-empty
         REMOTE="https://${GITHUB_ACTOR}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git"
-        git push --force "${REMOTE}" HEAD:docs_build
+        git push "${REMOTE}" HEAD:docs_build
+        
+        #install Hub to easily do a PR
         sudo chown root:root /
         sudo snap install hub --classic
         git config --global core.editor vim
