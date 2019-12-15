@@ -38,4 +38,4 @@ jobs:
         sudo chown root:root /
         sudo snap install hub --classic
         git config --global core.editor vim
-        hub pull-request -f -m "Docs build PR" -b gdgtoledo:master -h gdgtoledo:docs_build
+        hub pull-request -f -m "Docs build PR" -b ${GITHUB_ACTOR}:master -h ${GITHUB_ACTOR}:docs_build
