@@ -32,10 +32,11 @@ jobs:
         git add -A
         git commit -m "Automated docs build ${version}" --allow-empty
         REMOTE="https://${GITHUB_ACTOR}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git"
+        git push "${REMOTE}" --delete docs_build &>/dev/null || true
         git push "${REMOTE}" HEAD:docs_build
         
         #install Hub to easily do a PR
         sudo chown root:root /
         sudo snap install hub --classic
         git config --global core.editor vim
-        hub pull-request -f -m "Docs build PR" -b ${GITHUB_ACTOR}:master -h ${GITHUB_ACTOR}:docs_build
+        hub pull-request -f -m "Docs build PR" -b gdgtoledo:master -h ${GITHUB_ACTOR}:docs_build
