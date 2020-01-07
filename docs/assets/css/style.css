@@ -934,6 +934,9 @@ h6 {
 .meetup__resources__list_slide_bullet {
   list-style-image:url('/web/assets/images/icons/slide.png');
 }
+.meetup__resources__list_meetup_bullet {
+  list-style-image:url('/web/assets/images/icons/group.png');
+}
 .meetup__resources__list_code_bullet {
   list-style-image:url('/web/assets/images/icons/code.png');
 }
@@ -1083,8 +1086,8 @@ h6 {
 
 .meetups__list .meetup:not(.meetup__short):hover,
 .posts__list .post:not(.post__short):hover {
-  margin-top:  20px;
-  margin-bottom: 20px;
+  padding-top:  20px;
+  padding-bottom: 20px;
 }
 
 .meetups__list .meetup__head:hover + .meetup__speaker .meetup__speaker-name,
