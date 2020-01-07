@@ -1086,8 +1086,8 @@ h6 {
 
 .meetups__list .meetup:not(.meetup__short):hover,
 .posts__list .post:not(.post__short):hover {
-  padding-top:  20px;
-  padding-bottom: 20px;
+  padding-top:  30px;
+  padding-bottom: 30px;
 }
 
 .meetups__list .meetup__head:hover + .meetup__speaker .meetup__speaker-name,
