@@ -67,6 +67,7 @@ Para añadir una página con información relativa a un meetup, sigue los siguie
   1. En la sección de contenido, donde pone `Lorem ipsum...` refleja la descripción del meetup y otra información que consideres relevante
   1. Borra la propiedad `published: false` del _front matter_ o cámbiala a `true`
   1. Guarda los cambios y sube al repo `git add -A && git commit -m "My meetup info"`
+  1. Ejecuta el build para generar los ficheros estáticos (Ver sección `Con Docker`)
   1. Solicita Pull Request con la rama modificada.
 
 ### Miembros
@@ -77,4 +78,5 @@ Para añadir una página con información relativa a un miembro nuevo, sigue los
   1. Crea un nuevo fichero con extensión `.md` o puedes copiar uno ya existente, pero adapta el nombre del fichero para que no exista confusión.
   1. Añade información al fichero en el formato adecuado para que Jekyll pueda leerla correctamente, puedes copiar los campos de otro fichero.
   1. Guarda los cambios `git add -A && git commit -m "My info"`
+  1. Ejecuta el build para generar los ficheros estáticos (Ver sección `Con Docker`)
   1. Solicita Pull Request con la rama modificada.
