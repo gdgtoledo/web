@@ -1,0 +1,11 @@
+name: build_docs
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run jekyll builder
+      run: docker run --rm --volume="$PWD:/srv/jekyll" -it jekyll/builder:3.8 jekyll build
