@@ -27,6 +27,13 @@ jobs:
         chmod 777 -R ./docs/
         docker run --rm --volume="$PWD:/srv/jekyll" jekyll/builder:${JEKYLL_VERSION} jekyll build
 
+        # Check if there are git changes: dirty workspace, tracked or untracked files
+        gitChecks=$(.github/scripts/git-checks.sh)
+        if [[ "$gitChecks" == "0" ]]; then
+          echo "Aborting action as there are no modified files"
+          exit 1
+        fi
+
         git add -A
         git commit -m "generated: Automated docs build ${version}" --allow-empty
         REMOTE="https://${GITHUB_ACTOR}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git"
