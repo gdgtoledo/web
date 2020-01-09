@@ -15,7 +15,7 @@ jobs:
     - 
       name: Deployment
       env:
-        JEKYLL_VERSION: "3.8"
+        JEKYLL_VERSION: ${{ 3.8 }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         DOCS_BRANCH="docs_build_${GITHUB_SHA}"
@@ -38,11 +38,9 @@ jobs:
 
         git add -A
         git commit -m "generated: Automated docs build ${version}" --allow-empty
-        REMOTE="https://${GITHUB_ACTOR}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git"
-        git push "${REMOTE}" HEAD:${DOCS_BRANCH}
         
         # Install Hub to easily do a PR
         sudo chown root:root /
         sudo snap install hub --classic
         git config --global core.editor vim
-        hub pull-request -p -m "Generated: Static files" -b gdgtoledo:master -h gdgtoledo:${DOCS_BRANCH}
+        hub pull-request -p -m "Generated: Static files" -b gdgtoledo:master -h ${GITHUB_ACTOR}:${DOCS_BRANCH}
