@@ -38,6 +38,7 @@ jobs:
 
         git add -A
         git commit -m "generated: Automated docs build ${version}" --allow-empty
+        git remote add upstream "https://${GITHUB_ACTOR}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git"
         
         # Install Hub to easily do a PR
         sudo chown root:root /
