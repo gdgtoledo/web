@@ -15,7 +15,7 @@ jobs:
     - 
       name: Deployment
       env:
-        JEKYLL_VERSION: "3.8"
+        JEKYLL_VERSION: ${{ 3.8 }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         DOCS_BRANCH="docs_build_${GITHUB_SHA}"
