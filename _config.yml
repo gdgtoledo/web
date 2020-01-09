@@ -69,5 +69,6 @@ disqus_shortname: 'GDGToledo'
 url: 'https://gdgtoledo.github.io/web'
 author: 'GDG Toledo'
 authorTwitter: 'GDGToledo_es'
+timezone: Europe/Madrid
 
 permalink: '/:year/:title/'
