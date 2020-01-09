@@ -1,4 +1,4 @@
-name: build docs and deploy
+name: Build Static Files and send PR
 
 on:
   push:
