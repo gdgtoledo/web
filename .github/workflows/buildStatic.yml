@@ -45,4 +45,4 @@ jobs:
         sudo chown root:root /
         sudo snap install hub --classic
         git config --global core.editor vim
-        hub pull-request -p -m "Generated: Static files" -b gdgtoledo:master -h gdgtoledo:${DOCS_BRANCH}
+        hub pull-request -p -m "Generated: Static files" -b gdgtoledo:master -h ${GITHUB_ACTOR}:${DOCS_BRANCH}
