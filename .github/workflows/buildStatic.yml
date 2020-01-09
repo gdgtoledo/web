@@ -1,0 +1,48 @@
+name: build docs and deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: Checkout
+      uses: actions/checkout@v1
+    - 
+      name: Deployment
+      env:
+        JEKYLL_VERSION: "3.8"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        DOCS_BRANCH="docs_build_${GITHUB_SHA}"
+        # Create branch that will server as the source of the PR
+        git checkout -b ${DOCS_BRANCH}
+        git config --global user.name "${GITHUB_ACTOR}"
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+        # Build static files
+        mkdir -p docs
+        chmod 777 -R ./docs/
+        docker run --rm --volume="$PWD:/srv/jekyll" jekyll/builder:${JEKYLL_VERSION} jekyll build
+
+        # Check if there are git changes: dirty workspace, tracked or untracked files
+        gitChecks=$(.github/scripts/git-checks.sh)
+        if [[ "$gitChecks" == "0" ]]; then
+          echo "Aborting action as there are no modified files"
+          exit 1
+        fi
+
+        git add -A
+        git commit -m "generated: Automated docs build ${version}" --allow-empty
+        REMOTE="https://${GITHUB_ACTOR}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git"
+        git push "${REMOTE}" HEAD:${DOCS_BRANCH}
+        
+        # Install Hub to easily do a PR
+        sudo chown root:root /
+        sudo snap install hub --classic
+        git config --global core.editor vim
+        hub pull-request -p -m "Generated: Static files" -b gdgtoledo:master -h gdgtoledo:${DOCS_BRANCH}
