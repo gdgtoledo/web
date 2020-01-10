@@ -1,4 +1,4 @@
-name: build docs and deploy
+name: Build Static Files and send PR
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       name: Checkout
       uses: actions/checkout@v1
     - 
-      name: Deployment
+      name: Build Static Files
       env:
         JEKYLL_VERSION: ${{ 3.8 }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -39,9 +39,23 @@ jobs:
         git add -A
         git commit -m "generated: Automated docs build ${version}" --allow-empty
         git remote add upstream "https://${GITHUB_ACTOR}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git"
-        
-        # Install Hub to easily do a PR
-        sudo chown root:root /
-        sudo snap install hub --classic
-        git config --global core.editor vim
-        hub pull-request -p -m "Generated: Static files" -b gdgtoledo:master -h ${GITHUB_ACTOR}:${DOCS_BRANCH}
+
+    -
+      name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "generated: Automated docs build"
+        branch: master
+        committer: GDG Toledo <${GITHUB_ACTOR}@users.noreply.github.com>
+        author: GDG Toledo <${GITHUB_ACTOR}@users.noreply.github.com>
+        title: 'generated: Automated docs build'
+        body: |
+            ## ¿Qué hace esa PR?
+            - Ficheros estáticos auto-generados [create-pull-request][1]
+
+            ## ¿Por qué es importante?
+            Los ficheros estáticos deben generarse con cada cambio, y con esta PR aseguramos que a nadie se le olvida.
+
+            [1]: https://github.com/peter-evans/create-pull-request
+        labels: automated pr
