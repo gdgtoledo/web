@@ -18,15 +18,8 @@ jobs:
         JEKYLL_VERSION: ${{ 3.8 }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        DOCS_BRANCH="docs_build_${GITHUB_SHA}"
-        # Create branch that will server as the source of the PR
-        git checkout -b ${DOCS_BRANCH}
-        git config --global user.name "${GITHUB_ACTOR}"
-        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-
         # Build static files
         mkdir -p docs
-        chmod 777 -R ./docs/
         docker run --rm --volume="$PWD:/srv/jekyll" jekyll/builder:${JEKYLL_VERSION} jekyll build
 
         # Check if there are git changes: dirty workspace, tracked or untracked files
@@ -35,24 +28,19 @@ jobs:
           echo "Aborting action as there are no modified files"
           exit 1
         fi
-
-        git add -A
-        git commit -m "generated: Automated docs build ${version}" --allow-empty
-        git remote add upstream "https://${GITHUB_ACTOR}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git"
-
     -
       name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "generated: Automated docs build"
-        branch: master
+        branch: docs_build_${GITHUB_SHA}
         committer: GDG Toledo <${GITHUB_ACTOR}@users.noreply.github.com>
         author: GDG Toledo <${GITHUB_ACTOR}@users.noreply.github.com>
-        title: 'generated: Automated docs build'
+        title: 'generated: Build static files'
         body: |
             ## ¿Qué hace esa PR?
-            - Ficheros estáticos auto-generados [create-pull-request][1]
+            - Ficheros estáticos auto-generados con [create-pull-request][1]
 
             ## ¿Por qué es importante?
             Los ficheros estáticos deben generarse con cada cambio, y con esta PR aseguramos que a nadie se le olvida.
