@@ -36,8 +36,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "generated: Automated docs build"
         branch: docs_build_${GITHUB_SHA}
-        committer: GDG Toledo <${GITHUB_ACTOR}@users.noreply.github.com>
-        author: GDG Toledo <${GITHUB_ACTOR}@users.noreply.github.com>
         title: 'generated: Build static files'
         body: |
             ## ¿Qué hace esa PR?
