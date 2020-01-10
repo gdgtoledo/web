@@ -20,6 +20,7 @@ jobs:
       run: |
         # Build static files
         mkdir -p docs
+        chmod 777 -R ./docs/
         docker run --rm --volume="$PWD:/srv/jekyll" jekyll/builder:${JEKYLL_VERSION} jekyll build
 
         # Check if there are git changes: dirty workspace, tracked or untracked files
