@@ -25,7 +25,8 @@ jobs:
 
         # Check if there are git changes: dirty workspace, tracked or untracked files
         gitChecks=$(.github/scripts/git-checks.sh)
-        if [[ "$gitChecks" == "0" ]]; then
+        # Check error level
+        if [[ "$?" == "0" ]]; then
           echo "::warning ::Skipping PR creation as there are no modified files"
           echo "::set-env name=SKIP_CREATE_PR::true"
         fi
