@@ -38,10 +38,10 @@ jobs:
         branch: docs_build_${GITHUB_SHA}
         committer: GDG Toledo <${GITHUB_ACTOR}@users.noreply.github.com>
         author: GDG Toledo <${GITHUB_ACTOR}@users.noreply.github.com>
-        title: 'generated: Automated docs build'
+        title: 'generated: Build static files'
         body: |
             ## ¿Qué hace esa PR?
-            - Ficheros estáticos auto-generados [create-pull-request][1]
+            - Ficheros estáticos auto-generados con [create-pull-request][1]
 
             ## ¿Por qué es importante?
             Los ficheros estáticos deben generarse con cada cambio, y con esta PR aseguramos que a nadie se le olvida.
