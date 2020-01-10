@@ -32,7 +32,7 @@ jobs:
     -
       name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
-      if: env.SKIP_CREATE_PR != "true"
+      if: env.SKIP_CREATE_PR != 'true'
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "generated: Automated docs build"
