@@ -6,6 +6,7 @@ domain_name: 'https://gdgtoledo.github.io'
 
 aboutPage: false
 destination: docs
+exclude: [Dockerfile, docker-compose.yml, Makefile, README.md]
 
 markdown: 'kramdown'
 highlighter: 'rouge'
