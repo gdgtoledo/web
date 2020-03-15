@@ -16,14 +16,14 @@ archive: true
                 <span class="meetup__attendees">{{ page.attendees }} asistentes</span>
                 <span class="meetup__location">{{ page.meetupinfo.location }}</span>
             </h3>
-			<h4 class="meetup__speaker">> {{ page.speaker.name }}</h4>
+            <h4 class="meetup__speaker">> {{ page.speaker.name }}</h4>
         </header>
         <section class="meetup__body">
             <p>{{ content }}</p>
         </section>
         {% if page.slides or page.coderepos or page.videos or page.meetupinfo %}
             <section class="meetup__resources">
-                <h1 class="meetup__resources__header">Recursos usados en el meetup</h1>
+                <h2 class="meetup__resources__header">Recursos usados en el meetup</h2>
                 <ul  class="meetup__resources__list">
                     {% if page.meetupinfo %}
 						<li class="meetup__resource meetup__resources__list_meetup_bullet">
@@ -56,7 +56,7 @@ archive: true
         {% endif %}
         {% if page.images %}
             <section class="meetup__images">
-                <h1 class="meetup__images__header">Fotos</h1>
+                <h2 class="meetup__images__header">Fotos</h2>
                 <ul  class="meetup__images__list">
                     {% for image in page.images %}
                         <li class="meetup__image">
