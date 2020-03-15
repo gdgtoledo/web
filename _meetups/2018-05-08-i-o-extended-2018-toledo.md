@@ -38,14 +38,14 @@ images:
       alt: José Julián tras el meetup
 ---
 
-# Descripción
+## Descripción
 Google I/O Extended es un evento que se pretende unir a la comunidad de desarrolladores locales para experimentar el keynote y otras sesiones principales de Google I/O, en tiempo real.
 
-# Agenda
+## Agenda
 - 18:00 - Bienvenida I/O 18 Extended Toledo
 - 18:30 - Por decidir
 - 19:00 - Keynote Google I/O
 - 20:00 - Networking
 
-# Objetivo
+## Objetivo
 Queremos que la comunidad de desarrolladores y demás perfiles tecnológicos de Toledo y Castilla - La Mancha nos unamos para fomentar el sector en nuestra tierra.

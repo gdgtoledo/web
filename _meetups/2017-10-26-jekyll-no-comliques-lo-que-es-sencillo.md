@@ -25,7 +25,7 @@ images:
       alt: Javi sorteando licencia de Jetbrains
 ---
 
-# Descripción
+## Descripción
 Quiero hacer una web sencilla para poder cambiar contenidos rápidamente y sin complicaciones, **me pongo un wordpress!!!**.
 
 A veces hay que ajustar mejor la herramienta a nuestros propósitos, ¿De verdad necesito una base de datos? ¿De verdad necesito un lenguaje de servidor para publicar contenidos de una forma ágil? ¿De verdad necesito toda esa infraestructura de desarrollo y despliegue para simplemente publicar contenido de una forma rápida?

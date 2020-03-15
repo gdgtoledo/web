@@ -31,7 +31,7 @@ images:
       alt: Diapositivas
 ---
 
-# Descripción
+## Descripción
 En este meetup Plata nos va a presentar el proyecto final de curso de "Big Data Processing" de la Fundación Telefónica.
 
 Se hará una breve introducción sobre qué es el Big Data y su importancia, además de las herramientas que se utilizan para procesar los datos que se obtienen. Esta pequeña introducción de conceptos básicos del Big Data ayudará a que los asistentes puedan entender mejor el proyecto que se realizó, que bien no siendo real, se usaron datasets reales para completarlo.

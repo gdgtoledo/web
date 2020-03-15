@@ -36,18 +36,18 @@ images:
 
 ---
 
-# ¿Qué vamos a ver?
+## ¿Qué vamos a ver?
 En esta charla vamos a desplegar una aplicación en Google Cloud, y a partir de ella, vamos añadir monitorización utilizando Elastic Stack, compuesto por Elasticsearch, Kibana, y Beats.
 
 Almacenaremos los logs de la aplicación, así como recopilaremos métricas del sistema.
 
-# ¿Qué aprenderemos?
+## ¿Qué aprenderemos?
 Aprenderemos a provisionar recursos cloud con Terraform y Ansible en Google Cloud, de modo que podamos desplegar nuestra aplicación de manera repetible, y entonces añadiremos monitorización a la aplicación y sistemas utilizando Elastic Stack.
 
-# ¿Qué necesitas?
+## ¿Qué necesitas?
 Nada. Ganas de aprender y compartir una cerveza con las personas asistentes.
 
-# Sobre Manuel
+## Sobre Manuel
 Manuel es Sr. Software Engineer en Elastic (https://www.elastic.co), donde busca mejorar la calidad del proceso y del producto software desde el lado de la automación de tareas con Jenkins. Anteriormente ha sido QA Team Lead en Liferay Cloud, e ingeniero de software en el equipo de Plataforma de Liferay Inc. desde 2011, donde ha mejorado los procesos de desarrollo mediante la adopción de una cultura basada en la integración y la entrega continua, permitiendo a los equipos mover código a servidores internos de despliegue lo más rápido posible.
 
 Manuel es ingeniero técnico en informática de Gestión por la UNED, y máster en investigación en ingeniería del software y sistemas informáticos. Podéis encontrarle como "mdelapenya" en la Red.

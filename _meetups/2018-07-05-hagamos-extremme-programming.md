@@ -14,7 +14,7 @@ videos:
     - description: Grabación del meetup
       url: https://youtu.be/6TKl8-ffXac
 ---
-# Descripción
+## Descripción
 Esta metodología existe desde el año 2001, es decir, que tiene relativamente poco tiempo. Aunque lleve tan sólo unos años ha revolucionado el mundo de la industria de desarrollo software generando diversas opiniones, tanto buenas como no tan buenas.
 
 Acompáñanos a desmitificar el eXtreme Programming y a conocer sus prácticas más relevantes.
@@ -27,6 +27,6 @@ Extreme Programming es una metodología de desarrollo ágil de software en la qu
 
 Participa con nosotros de este interesante meetup que te dejará buenas prácticas y, por qué, no, te hará algo más ágil
 
-# Requisitos
+## Requisitos
 
 Ninguno, ganas de aprender y debatir sobre el tema con l@s asistentes y el ponente en las cervezas de después.

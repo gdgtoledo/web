@@ -38,7 +38,7 @@ images:
       alt: Manu en un momneto del debate sobre Kanban
 ---
 
-# Descripción
+## Descripción
 Kanban es un método de administración de tareas y flujos de trabajos usado especialmente con las empresas que trabajan en desarrollo de software, aunque puede ser aplicado a múltiples sectores.
 
 Kanban deriva del japonés que se compone de la palabra kan ,que significa pictograma o algo visual, y la palabra ban, que representa una tarjeta o cartón.
@@ -49,5 +49,5 @@ El método Kanban deriva del sistema de producción Just-in-time (JIT), traducid
 
 En esta sesión haremos una introducción a la metodología, así como compartiremos experiencias de su uso en proyectos de desarrollo de software.
 
-# Requisitos
+## Requisitos
 Ninguno, tan solo ganas de aprender y tomar unas cervezas con el grupo.

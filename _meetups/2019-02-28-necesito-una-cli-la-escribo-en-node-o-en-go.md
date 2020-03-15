@@ -15,18 +15,18 @@ coderepos:
       url: https://github.com/gdgtoledo/nodeGoCLI
 ---
 
-# Descripción
+## Descripción
 En esta charla veremos qué es una CLI, y qué uso se les suele dar. Veremos además cómo implementar una de una manera muy simple con dos lenguajes diferentes muy comunes a la hora de escribir CLIs: NodeJS y Golang.
 
-# ¿Qué necesitas?
+## ¿Qué necesitas?
 Nada. Ganas de aprender y compartir una cerveza con las personas asistentes.
 
-# Sobre los ponentes
+## Sobre los ponentes
 
-## Javier López
+### Javier López
 Javier es Front Lead en Valant, una empresa americana del sector salud.
 
-## Manuel de la Peña
+### Manuel de la Peña
 Manuel es QA Team Lead en Liferay Cloud, la división Cloud de Liferay Inc (https://www.liferay.com), donde busca mejorar la calidad del proceso y del producto software desde el lado de la infraestructura. Anteriormente ha sido ingeniero de software en el equipo de Plataforma de Liferay Inc. desde 2011, donde ha mejorado los procesos de desarrollo mediante la adopción de una cultura basada en la integración y la entrega continua, permitiendo a los equipos mover código a servidores internos de despliegue lo más rápido posible. Para ello, utiliza herramientas de virtualización y automatización como Docker o Jenkins para hacer la vida más fácil a los equipos de desarrollo.
 
 Manuel es ingeniero técnico en informática de Gestión por la UNED, y máster en investigación en ingeniería del software y sistemas informáticos. Podéis encontrarle como "mdelapenya" en la Red.

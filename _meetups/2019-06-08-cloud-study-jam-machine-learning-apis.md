@@ -33,7 +33,7 @@ images:
       alt: Cocido posterior
 ---
 
-# Descripción
+## Descripción
 ¿Quieres empezar con Google Cloud, pero no sabes por dónde empezar? ¡Ven a nuestro Cloud Study Jam!
 
 Es un training oficial de Google, por valor de $55, gratuito para todos los asistentes. Juntos, trabajaremos en varios laboratorios de Google Cloud sobre Aprendizaje automático: detectar etiquetas, caras e hitos en imágenes con la API de Cloud Vision, implementando un AI Chatbot con diálogo y análisis de entidad y sentimiento con la API de lenguaje natural.

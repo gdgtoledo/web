@@ -28,7 +28,7 @@ images:
       alt: Deseos del GDG para 2018
 ---
 
-# Descripción
+## Descripción
 El contenido de la charla trata sobre un resumen y síntesis del libro “Clean Code” de Robert C. Matin.
 
 Introduciremos el término Clean Code, qué significa, qué implica y qué ventajas tiene.
@@ -41,10 +41,10 @@ Repasaremos las reglas de formato para que nuestro código sea entendible y lo m
 Veremos cómo escribir clases y estructuras de datos “limpias”.
 Los ejemplos de código son en Java, pero pueden ser aplicados a cualquier lenguaje.
 
-# Requisitos
+## Requisitos
 No se necesita nada más que traer ganas de aprender y luego tomar una cerveza con el ponente y l@s asistentes.
 
-# Sobre el ponente
+## Sobre el ponente
 Álvaro García Loaisa es un informático, apasionado por los temas tecnológicos, sobre todo los temas relacionados con la programación, su excelencia, el movimiento software craftsmanship y las metodologías ágiles. Está continuamente aprendiendo sobre temas como el liderazgo, mentalidad positiva y formación y maduración de equipos de desarrollo a altos niveles de rendimiento.
 
 Le encanta aprender y practicar con lenguajes de programación, juntándolos con el uso de patrones de desarrollo y buenas prácticas en estos entornos.

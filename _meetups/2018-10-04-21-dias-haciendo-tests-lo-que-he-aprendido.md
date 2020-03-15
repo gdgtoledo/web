@@ -24,8 +24,8 @@ images:
       alt: Presentación de la charla
 ---
 
-# Descripción
+## Descripción
 Restrospectiva-testimonio sobre la experiencia vivida durante la incursión en la calidad del software basada en el testing, concretamente en dos proyectos software muy diferentes: un nuevo desarrollo, y un mantenimiento de grupo de aplicaciónes y rutinas legacy.
 
-# Sobre el ponente
+## Sbre el ponente
 Manu García es desarrollador de Software apasionado por el análisis, integración continúa, la automatización, el testing, la refactorización y las buenas prácticas de escritura de código. Disfruta del estado de aprendizaje continuo, escuchando y compartiendo lo que aprende.

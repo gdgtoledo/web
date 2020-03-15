@@ -35,7 +35,7 @@ images:
       alt: Aspecto de los asistentes
 ---
 
-# Descripción
+## Descripción
 Meetup introductorio al mundo blockchain liderado por Iñigo Molero, co-autor del libro "Blockchain, La Revolución Industrial de Internet" y Jori Armbruster Co-Founder de Ethic Hub.
 
 Se hará un repaso a la historia del crowdfunding y como este se ve afectado por Blockchain.

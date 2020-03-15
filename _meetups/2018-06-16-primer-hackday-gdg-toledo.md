@@ -16,11 +16,11 @@ coderepos:
       url: https://github.com/gdgtoledo/docker-kata
 ---
 
-# Descripción
+## Descripción
 Os lo explicamos todo en este [repositorio de Github](https://github.com/gdgtoledo/docker-kata).
 Así que si estás animad@ vente!
 
-# Agenda
+## Agenda
 
 * 8:00-8:30 - Presentaciones, selección de equipos y reparto de tareas
 * 8:30-11:15 - Trabajo en equipo
@@ -29,5 +29,5 @@ Así que si estás animad@ vente!
 * 13:30 -14:00 - ¿Pedimos unas pizzas? (pago comunitario)
 * 14:00 - 15:00 - Presentación de los proyectos
 
-# Extras
+## Extras
 A lo largo de toda la jornada tendremos fruta (para l@s más san@s), algo de bollería (para l@s más insan@s), agua, y café de cápsulas.
