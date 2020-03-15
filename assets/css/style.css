@@ -894,32 +894,40 @@ h6 {
 
 .post__body h2,
 .meetup__body h2 {
-  font-size: calc(var(--text-size-2xl) - 0.2rem);
+  font-size: var(--text-size-2xl);
+  font-weight: var(--text-weight-normal);
   font-style: normal;
+  text-decoration: none;
   margin-top: 30px;
 }
 
 .post__body h3,
 .meetup__body h3 {
   font-size: calc(var(--text-size-2xl) - 0.3rem);
+  font-weight: var(--text-weight-medium);
   margin-top: 20px;
 }
 
 .post__body h4,
 .meetup__body h4 {
-  font-size: calc(var(--text-size-2xl) - 0.4rem);
+  font-size: calc(var(--text-size-2xl) - 0.3rem);
+  font-weight: var(--text-weight-normal);
+  text-decoration: none;
   margin-top: 20px;
 }
 
 .post__body h5,
 .meetup__body h5 {
-  font-size: calc(var(--text-size-2xl) - 0.5rem);
+  font-size: calc(var(--text-size-2xl) - 0.4rem);
+  font-weight: var(--text-weight-medium);
   margin-top: 20px;
 }
 
 .post__body h6,
 .meetup__body h6 {
-  font-size: calc(var(--text-size-2xl) - 0.6rem);
+  font-size: calc(var(--text-size-2xl) - 0.4rem);
+  font-weight: var(--text-weight-normal);
+  text-decoration: none;
   margin-top: 20px;
 }
 
