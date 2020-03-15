@@ -716,7 +716,7 @@ h6 {
 .meetup__header .meetup__title {
   text-transform: capitalize;
   line-height: normal;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   margin-top: 30px;
   font-family: var(--font-family-rubik);
   font-weight: var(--text-weight-medium);
@@ -936,10 +936,10 @@ h6 {
 }
 
 .meetup__images__header {
-   font-family: var(--font-family-helvetica);
+  font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-medium);
   font-size: var(--text-size-2xl);
-  color: var(--text-color-gray-s);
+  color: var(--text-color-primary);
   font-style: normal;
   margin-bottom: 40px;
 }
@@ -971,7 +971,7 @@ h6 {
   font-family: var(--font-family-helvetica);
   font-weight: var(--text-weight-medium);
   font-size: var(--text-size-2xl);
-  color: var(--text-color-gray-s);
+  color: var(--text-color-primary);
   font-style: normal;
   margin-bottom: 30px;
 }
