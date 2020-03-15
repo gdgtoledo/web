@@ -1,0 +1,48 @@
+name: Build Static Files and send PR
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: Checkout
+      uses: actions/checkout@v2
+    - 
+      name: Build Static Files
+      env:
+        JEKYLL_VERSION: ${{ 3.8 }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Build static files
+        make build
+
+        # Check if there are git changes: dirty workspace, tracked or untracked files
+        gitChecks=$(.github/scripts/git-checks.sh)
+        # Check error level
+        if [[ "$?" == "0" ]]; then
+          echo "::warning ::Skipping PR creation as there are no modified files"
+          echo "::set-env name=SKIP_CREATE_PR::true"
+        fi
+    -
+      name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      if: env.SKIP_CREATE_PR != 'true'
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "generated: Automated docs build"
+        branch: docs_build_${{ env.GITHUB_SHA }}"
+        title: 'generated: Build static files'
+        body: |
+            ## ¿Qué hace esa PR?
+            - Ficheros estáticos auto-generados con [create-pull-request][1]
+
+            ## ¿Por qué es importante?
+            Los ficheros estáticos deben generarse con cada cambio, y con esta PR aseguramos que a nadie se le olvida.
+
+            [1]: https://github.com/peter-evans/create-pull-request
+        labels: automated pr

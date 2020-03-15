@@ -48,11 +48,7 @@ docker-compose up --build
 - si solo quieres compilar el proyecto puedes hacer uso de la imagen oficial de Jekyll en DockerHub:
 
 ````shell
-export JEKYLL_VERSION=3.8
-docker run --rm \
-  --volume="$PWD:/srv/jekyll" \
-  -it jekyll/builder:$JEKYLL_VERSION \
-  jekyll build
+make build
 ````
 
 ## 🔧 Develop

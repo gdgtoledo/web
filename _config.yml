@@ -6,6 +6,7 @@ domain_name: 'https://gdgtoledo.github.io'
 
 aboutPage: false
 destination: docs
+exclude: [Dockerfile, docker-compose.yml, Makefile, README.md]
 
 markdown: 'kramdown'
 highlighter: 'rouge'
@@ -69,5 +70,6 @@ disqus_shortname: 'GDGToledo'
 url: 'https://gdgtoledo.github.io/web'
 author: 'GDG Toledo'
 authorTwitter: 'GDGToledo_es'
+timezone: Europe/Madrid
 
 permalink: '/:year/:title/'
