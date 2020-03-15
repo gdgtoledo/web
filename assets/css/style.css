@@ -586,7 +586,7 @@ h6 {
   justify-content: flex-start;
   align-items: flex-start;
   margin: 0 auto;
-  padding: 11vh 6vw 3vh 6vw;
+  padding: 11vh 6vw 6vh 6vw;
 }
 
 .page-container section:last-child ul {
@@ -665,6 +665,7 @@ h6 {
 .post,
 .meetup {
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .post:not(.post__short),
@@ -762,7 +763,6 @@ h6 {
   font-weight: var(--text-weight-normal);
   color: var(--text-color-gray-s);
   padding: 10px 10px 2px 0;
-  width: max-content;
   display: block;
   font-style: normal;
 }
@@ -954,8 +954,6 @@ h6 {
 .meetup__image:last-child {
   margin-right: 0;
 }
-
-
 
 .meetup__resources {
   margin-top: 60px;
