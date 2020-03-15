@@ -9,17 +9,21 @@ archive: true
 
     <article class="meetup">
         <header class="meetup__header">
-            <h1>{{ page.title }}</h1>
-            <h2>{{ page.description }}</h2>
-			<h3>{{ page.speaker.name }}</h3>
-            <h4>{{ page.date | date:"%B %-d, %Y" }} | {{ page.attendees }} asistentes | {{ page.meetupinfo.location }} </h4>
+            <h1 class="meetup__title">{{ page.title }}</h1>
+            <h2 class="meetup__description">> {{ page.description }}</h2>
+            <h3 class="meetup__details">
+                <span class="meetup__date">{{ page.date | date:"%B %-d, %Y" }}</span>
+                <span class="meetup__attendees">{{ page.attendees }} asistentes</span>
+                <span class="meetup__location">{{ page.meetupinfo.location }}</span>
+            </h3>
+			<h4 class="meetup__speaker">> {{ page.speaker.name }}</h4>
         </header>
         <section class="meetup__body">
             <p>{{ content }}</p>
         </section>
         {% if page.slides or page.coderepos or page.videos or page.meetupinfo %}
             <section class="meetup__resources">
-                <h2 class="meetup__resources__header">Recursos usados en el meetup</h2>
+                <h1 class="meetup__resources__header">Recursos usados en el meetup</h1>
                 <ul  class="meetup__resources__list">
                     {% if page.meetupinfo %}
 						<li class="meetup__resource meetup__resources__list_meetup_bullet">
@@ -52,7 +56,7 @@ archive: true
         {% endif %}
         {% if page.images %}
             <section class="meetup__images">
-                <h2 class="meetup__images__header">Fotos</h2>
+                <h1 class="meetup__images__header">Fotos</h1>
                 <ul  class="meetup__images__list">
                     {% for image in page.images %}
                         <li class="meetup__image">
@@ -65,3 +69,5 @@ archive: true
     </article>
 
 </div>
+
+{% include footer.html %}

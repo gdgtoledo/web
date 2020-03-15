@@ -17,9 +17,12 @@
                         <a class="meetup__title" href="{{ "/" | relative_url  }}{{ meetup.url | remove_first: '/' }}" >
                             {{ meetup.title }}
                         </a>
-                        <aside class="meetup__date">
-                            <span>
-                                {{ meetup.date | date:"%b %d, %Y"}} ({{ meetup.attendees }} asistentes)
+                        <aside class="meetup__details">
+                            <span class="meetup__date">
+                                {{ meetup.date | date:"%b %d, %Y"}}
+                            </span>
+                            <span class="meetup__attendees">
+                                {{ meetup.attendees }} asistentes
                             </span>
                         </aside>
                     </section>
@@ -32,9 +35,12 @@
                     <div class="meetup__head">
                         <section class="meetup__info">
                             <a class="meetup__title" href="{{ meetup.url | relative_url }}">{{ meetup.title | escape }}</a>
-                            <aside class="meetup__date">
-                                <span>
-                                    {{ meetup.date | date:"%b %d, %Y" }} ({{ meetup.attendees }} asistentes)
+                            <aside class="meetup__details">
+                                <span class="meetup__date">
+                                    {{ meetup.date | date:"%b %d, %Y"}}
+                                </span>
+                                <span class="meetup__attendees">
+                                    {{ meetup.attendees }} asistentes
                                 </span>
                             </aside>
                         </section>
