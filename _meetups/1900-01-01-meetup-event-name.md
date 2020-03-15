@@ -11,13 +11,13 @@ meetupinfo:
   description: Evento en meetup.com
   url: http://www.setHereUrl
   location: Coworking Cámara de Comercio Santa María de Benquerencia
-slides: 
+slides:
     - description: Slide description
       url: http://www.setHereUrl
-coderepos: 
+coderepos:
     - description: Repo code description
       url: http://www.setHereUrl
-videos: 
+videos:
     - description: Video description
       url: http://www.setHereUrl
 images:

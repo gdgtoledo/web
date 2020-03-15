@@ -11,10 +11,10 @@ meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/244750367/
   location: Cámara de Comercio de Talavera de la Reina
-slides: 
+slides:
    - description: Presentación utilizada en el meetup
      url: https://github.com/rafagarcia/vueling
-coderepos: 
+coderepos:
    - description: Repositorio de código en GitHub
      url: https://github.com/rafagarcia/vueling
 images:
@@ -50,6 +50,7 @@ images:
       alt: Menú del cocido que degustamos
 ---
 
+# Descripción
 En los últimos meses, en el ecosistema del desarrollo front ha empezado a sonar con fuerza [Vue.js](https://vuejs.org/)
 como framework javascript de referencia, reforzado por la reducida curva de aprendizaje para su uso y su progresividad,
 lo que permite incorporarlo tanto a proyectos pequeños como a grandes aplicaciones.
@@ -64,13 +65,13 @@ vistos en la charla.
 El objetivo del taller es conseguir que podáis aplicar Vue.js de manera inmediata en vuestros proyectos, consiguiendo
 extraer el máximo beneficio de las ventajas que aporta.
 
-**Requisitos para seguir la charla**
+# Requisitos para seguir la charla
 
 * [Node](https://nodejs.org/es) & [NPM](https://nodejs.org/es/) instalados en vuestra maquina
 * Navegador Chrome- IDE de desarrollo (Recomendado [Visual Studio Code](https://code.visualstudio.com/download) )
 * Una vez instalado Node & NPM, instalar el Vue.js CLI a través de vuestro terminal (`npm install --global vue-cli`)
 
-**Meetup Gastro-Cultural**
+# Meetup Gastro-Cultural
 
 Posteriormente, tras el taller y dado que el meetup se va a organizar extraordinariamente en la cuidad de Talavera de
 la Reina, donde vive el ponente, hemos preparado un par de actividades:
