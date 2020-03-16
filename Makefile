@@ -7,3 +7,8 @@ build:
 	mkdir -p $$PWD/docs/
 	chmod -R 777 $$PWD/docs/
 	docker run --rm --volume="$$PWD:/srv/jekyll" jekyll/builder:$(JEKYLL_VERSION) jekyll build
+
+.PHONY: run
+run:
+	@echo "Running Static files"
+	docker-compose up --build
