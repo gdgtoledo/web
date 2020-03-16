@@ -3,7 +3,7 @@ layout: meetup
 title: Women in Tech, de cero a Front, pasando por ADALAB
 date: 2018-11-10 13:00:00
 attendees: 16
-description: En este meetup queremos presentaros la evolución de un grupo de mujeres que han cambiado sus carreras profesionales hacia el mundo del desarrollo, en este caso en el ámbito del front-end, gracias al programa de [Adalab](https://adalab.es)
+description: En este meetup queremos presentaros la evolución de un grupo de mujeres que han cambiado sus carreras profesionales hacia el mundo del desarrollo.
 speaker:
   name: Aylen Ortiz-Jaureguizar, Ester González, Laura Domingo y Laura Moñino
 meetupinfo:
@@ -28,6 +28,7 @@ images:
       alt: Whatever
 ---
 
+## Descripción
 En este meetup queremos presentaros la evolución de un grupo de mujeres que han cambiado sus carreras profesionales hacia el mundo del desarrollo, en este caso en el ámbito del front-end. Para ello, se inscribieron en el programa de [Adalab](https://adalab.es), en el que, según su web, "...Ofrecemos a mujeres como tú la posibilidad de reinventarse como programadoras en tan solo 4 meses y empezar a trabajar en empresas de nuestra red..."
 
 Por ello vendrán a contarnos su experiencia en este proceso de cambio, animándonos a participar en el debate.

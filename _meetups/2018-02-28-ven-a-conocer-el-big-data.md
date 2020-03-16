@@ -10,7 +10,7 @@ meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/247829472/
   location: Coworking Cámara de Comercio Santa María de Benquerencia
-videos: 
+videos:
     - description: Retransmisión en streaming
       url: https://youtu.be/0UV4Mou1huI
 images:
@@ -31,8 +31,7 @@ images:
       alt: Diapositivas
 ---
 
-## Lo que haremos
-
+## Descripción
 En este meetup Plata nos va a presentar el proyecto final de curso de "Big Data Processing" de la Fundación Telefónica.
 
 Se hará una breve introducción sobre qué es el Big Data y su importancia, además de las herramientas que se utilizan para procesar los datos que se obtienen. Esta pequeña introducción de conceptos básicos del Big Data ayudará a que los asistentes puedan entender mejor el proyecto que se realizó, que bien no siendo real, se usaron datasets reales para completarlo.
@@ -40,7 +39,6 @@ Se hará una breve introducción sobre qué es el Big Data y su importancia, ade
 Eun Young Cho Eoh ([Linkedin](https://www.linkedin.com/in/eun-plata/) y [Twitter](https://twitter.com/eunEsPlata)) es tecnocuriosa y meetup-adicta. Hace un año que decidió adentrarse en el mundo tecnológico y digital en el que intenta encontrarse. Empezó estudiando la programación en Java, pero en su camino se cruzó el Big Data y ahora busca un lugar para seguir desarrollándose como Big Data Enginner. Además colabora con GDG Toledo y Ethic Hub en lo que puede.
 
 ## Lo que hay que traer
-
 Tan sólo ganas de aprender algo nuevo y también paciencia por la ponente ya que es su primer meetup :)
 
-Después del meetup habrá cervezas y networking.  
+Después del meetup habrá cervezas y networking.

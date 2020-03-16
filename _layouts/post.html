@@ -9,9 +9,9 @@ archive: true
 
     <article class="post">
         <header class="post__header">
-            <h1>{{ page.title }}</h1>
-            <h2>{{ page.description }}</h2>
-            <h3>{{ page.date | date:"%B %-d, %Y" }}</h3>
+            <h1 class="post__title">{{ page.title }}</h1>
+            <h2 class="post__description">> {{ page.description }}</h2>
+            <h3 class="post__date">{{ page.date | date:"%B %-d, %Y" }}</h3>
         </header>
         <section id="post-body" class="post__body">
             {{content}}
@@ -53,3 +53,5 @@ archive: true
     {% endif %}
 
 </div>
+
+{% include footer.html %}

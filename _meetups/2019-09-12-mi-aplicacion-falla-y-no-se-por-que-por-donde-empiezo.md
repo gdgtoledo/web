@@ -11,10 +11,10 @@ meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/263866205/
   location: Coworking Cámara de Comercio Santa María de Benquerencia
-slides: 
+slides:
     - description: Introduction to observability with Elastic Stack
       url: http://www.setHereUrl
-coderepos: 
+coderepos:
     - description: Repositorio en GitHub de Linneo, la aplicación usada para ser monitorizada
       url: https://github.com/gdgtoledo/linneo
 images:

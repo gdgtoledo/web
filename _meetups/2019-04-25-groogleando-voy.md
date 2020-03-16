@@ -23,6 +23,7 @@ images:
       alt: ¿Qué es un DSL?
 ---
 
+## Descripción
 Si has tenido que programar con el API de los servicios de Google para acceder a Drive, por ejemplo, habrás comprobado que es un dolor. Además, como toda buen API, está orientada a ser usada por un programador mediante la invocación de funciones haciendo el código cada vez más difícil de seguir y entender. Groogle es un DSL (domain specific language) destinado a facilitar el uso de estos servicios orientado tanto a los programadores como a usuarios sin (muchos) conocimientos de programación.
 
 En esta charla veremos qué es un DSL, cómo surgió la idea de Groogle así como los servicios actualmente implantados y algunos casos de uso. Si quieres echar un ojo a la documentación para decidir si esta charla puede ser interesante para ti, puedes consultarla en https://groogle.gitlab.io

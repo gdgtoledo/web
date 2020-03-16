@@ -10,7 +10,7 @@ meetupinfo:
   description: Evento en meetup.com
   url: https://www.meetup.com/es-ES/gdgtoledo_es/events/240752637/
   location: Biblioteca de Castilla-La Mancha
-slides: 
+slides:
     - description: Diapositivas usadas por Manu
       url: https://es.slideshare.net/ManueldelaPeaPea/kanban-77199417
     - description: Diapositivas usadas por Antonio
@@ -38,7 +38,8 @@ images:
       alt: Manu en un momneto del debate sobre Kanban
 ---
 
- Kanban es un método de administración de tareas y flujos de trabajos usado especialmente con las empresas que trabajan en desarrollo de software, aunque puede ser aplicado a múltiples sectores.
+## Descripción
+Kanban es un método de administración de tareas y flujos de trabajos usado especialmente con las empresas que trabajan en desarrollo de software, aunque puede ser aplicado a múltiples sectores.
 
 Kanban deriva del japonés que se compone de la palabra kan ,que significa pictograma o algo visual, y la palabra ban, que representa una tarjeta o cartón.
 
@@ -48,6 +49,5 @@ El método Kanban deriva del sistema de producción Just-in-time (JIT), traducid
 
 En esta sesión haremos una introducción a la metodología, así como compartiremos experiencias de su uso en proyectos de desarrollo de software.
 
-### Requisitos
-
+## Requisitos
 Ninguno, tan solo ganas de aprender y tomar unas cervezas con el grupo.
