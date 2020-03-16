@@ -41,9 +41,11 @@ y abrir el browser en `http://localhost:4000`
 Si tienes Docker instalado en el sistema, accede a la raíz del proyecto y podrás optar por las siguientes opciones:
 
 - Compilar y servir en tiempo real usando el comando:
+````shell
+make run
 ````
-docker-compose up --build
-````
+
+y abrir el browser en `http://localhost:4000`
 
 - si solo quieres compilar el proyecto puedes hacer uso de la imagen oficial de Jekyll en DockerHub:
 
