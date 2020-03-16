@@ -73,3 +73,6 @@ authorTwitter: 'GDGToledo_es'
 timezone: Europe/Madrid
 
 permalink: '/:year/:title/'
+
+# deployment
+port: 5000

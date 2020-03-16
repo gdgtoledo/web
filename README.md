@@ -45,6 +45,8 @@ Si tienes Docker instalado en el sistema, accede a la ra√≠z del proyecto y podr√
 make run
 ````
 
+y abrir el browser en `http://localhost:4000`
+
 - si solo quieres compilar el proyecto puedes hacer uso de la imagen oficial de Jekyll en DockerHub:
 
 ````shell
