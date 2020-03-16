@@ -34,7 +34,7 @@ En este meetup queremos presentaros la evolución de un grupo de mujeres que han
 Por ello vendrán a contarnos su experiencia en este proceso de cambio, animándonos a participar en el debate.
 
 ## Sobre las ponentes
-###Aylen Ortiz-Jaureguizar Diotto
+### Aylen Ortiz-Jaureguizar Diotto
 Reinventarse es de valientes" Vengo del mundo de lo social, pero he llegado al tecnológico para quedarme.
 He trabajado como educadora en un centro de menores durante casi 8 años, pero creo que ha llegado el momento de reinventarme.
 Apasionada del mundo social, creyente fiel de las segundas oportunidades y muy comprometida con la inserción social.
