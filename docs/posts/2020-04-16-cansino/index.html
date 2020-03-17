@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>GDG Toledo - Cansino</title>
+    <link rel="shortcut icon" href="/web/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/web/assets/css/style.css">
+    <link rel="alternate" type="application/rss+xml" title="My Blog" href="/web/feed.xml">
+    <link rel="stylesheet" href="/web/assets/css/highlight.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <main class="app-container">
+      <nav class="navigation">
+    <a href="/web/" class="navigation__logo">
+        <svg viewBox="0 0 474 541" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M199.374 218H165V252.375H199.374V218ZM309.374 218H275V252.375H309.374V218Z" fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M236.16 0H202.465V34.376H236.16H236.844H270.537V0H236.844H236.16ZM165.774 36.166H200.148V70.543H165.774V36.166ZM307.228 35.166H272.855V69.543H307.228V35.166ZM129.08 74.334H163.457V108.503V108.71V140.67H168.774H169.457H202.465H203.148H236.16H236.844H269.855H270.537H303.547H304.228H310.547V108.71V108.503V74.334H344.923V108.503V108.71V140.67H370.934H371.617H404.628H405.31H438.628H439.002H473.002V175.043H439.002H438.628H405.31H404.628H389.951V207.415V208.624V240.581V241.79V274.581V274.959V308.959H355.577V274.959V274.581V241.79V240.581V208.624V207.415V175.043H337.923H337.241H304.228H303.547H270.537H269.855H236.844H236.16H203.148H202.465H169.457H168.774H135.761H135.08H117.951V207.415V208.624V240.581V241.79V274.581V274.959V308.959H83.577V274.959V274.581V241.79V240.581V208.624V207.415V175.043H68.374H67.693H34.374H34H0V140.67H34H34.374H67.693H68.374H101.387H102.068H129.08V108.71V108.503V74.334ZM185.772 305H219.467H220.151H253.467H253.844H287.844V339.25H321.49V373.334H354.548H355.23H388.924V407.709H355.23V440.879H321.535V472.434V473.045V506.809H287.844V540.374H253.844H253.467H220.151H219.467H185.772V506.809H152.081V473.045V472.434V440.879H118.387V407.709H84.694V373.334H118.387H119.068H152.117V339.25H185.772V305ZM287.162 438.67V472.434V473.045V506H253.844H253.467H220.151H219.467H186.455V473.045V472.434V438.67H152.764V407.709V406.503V373.625H186.491V339.374H219.467H220.151H253.467H253.844H287.117V373.625H320.854V406.503V407.709V438.67H287.162ZM84.375 339.168H50V373.543H84.375V339.168ZM389.241 339.168H423.617V373.543H389.241V339.168Z"
+                fill="white" />
+        </svg>
+    </a>
+    <ul class="navigation__items">
+        
+            <li class="navigation__item">
+                <a  class="navigation__link"
+                href="/web/">
+                    home
+                </a>
+            </li>
+        
+            <li class="navigation__item">
+                <a  class="navigation__link"
+                href="/web/meetups">
+                    meetups
+                </a>
+            </li>
+        
+            <li class="navigation__item">
+                <a  class="navigation__link"
+                href="/web/posts">
+                    posts
+                </a>
+            </li>
+        
+    </ul>
+</nav>
+
+<div class="page-container">
+
+    <article class="post">
+        <header class="post__header">
+            <h1 class="post__title">Cansino</h1>
+            <h2 class="post__description">> Cansineando a los políticos</h2>
+            <h3 class="post__date">March 16, 2020</h3>
+            <h4 class="post__author">Por Manuel de la Peña (<a class="twitter" href="https://twitter.com/mdelapenya"><span class="icon-twitter"> @mdelapenya</span></a>)</h4>
+        </header>
+        <section id="post-body" class="post__body">
+            <p>A veces los políticos y las políticas de turno hablan mucho sobre lo que ellos dicen que es importante para la ciudadanía, y a su vez, muchas otras veces encontramos que no hacen lo que dicen.</p>
+
+<p>Por ello, se me ha ocurrido el acceder a las agendas públicas de ciertos políticos, en particular presidentes de comunidades autónomas, hacer un scrapping de las mismas puesto que <strong>no ofrecen un API público para consultarlas</strong>, y almacenar los eventos de cada día en un repositorio. De esta manera, seríamos capaces de consultar los citados eventos de una manera estructurada utilizando técnicas de BigData, y verificar si lo que estos políticos hacen (porque está en sus agendas) se alinea con lo que realmente prometen.</p>
+
+<p>Es cierto que este enfoque tendría cierto sesgo al no publicar éstos realmente lo que hacen, sino que se centran únicamente en compartir un mero texto muy vago, con poca literatura: <em>‘Asiste al consejo blah blah blah’</em>, supongo que para que no pillarse los dedos. Pero es lo que tenemos. ¡Ya nos gustaría que los gobernantes fueran más transparentes y nos facilitaran más información!</p>
+
+<p>Con todo esto en la mano, queremos procesar esos eventos de las agendas, quitar las palabras de paso en castellano (preposiciones, conjunciones, etc.), y almacenar cada evento en un repositorio que permita realizar analíticas sobre este conjunto de datos. Y aprovechando que <em>Elasticsearch</em> es un almacenamiento orientado a búsquedas, y que trabajo en <a href="https://www.elastic.co">Elastic</a>, qué mejor que aprovechar su potencia para almacenar en él las agendas, procesar el contenido, y mostrar gráficos de interés en <em>Kibana</em>, como por ejemplo una nube de tags con las palabras más utilizadas. El resultado para Castilla-La Mancha, podría ser algo así:</p>
+
+<p><img src="/web/assets/images/posts/2020-04-16-cansino/dashboard-sample.png" alt="Castilla-La Mancha Dashboard" /></p>
+
+<blockquote>
+  <p>Como podéis comprobar, muchos políticos simplemente “asisten” a reuniones. Como ya dije antes, como ciudadano me encantaría que fueran mucho más transparentes de lo que en realidad son.</p>
+</blockquote>
+
+<p>Es por ello que he llamado a este servicio <strong>Cansino</strong>, porque persigue de manera incansable al político de turno, como el famoso <a href="http://www.josemota.com/personaje/el-cansino-historico/">Cansino Histórico de José Mota</a>.</p>
+
+<h2 id="stack-tecnológico">Stack tecnológico</h2>
+
+<p>En cuanto al stack, os he dado unas pinceladas del almacenamiento primario, <em>Elasticsearch</em>, así como la aplicación de visualización de datos, <em>Kibana</em>. Hablaré de ellos más adelante. Pero, ¿cómo cogemos, procesamos y enviamos las agendas al almacenamiento principal?</p>
+
+<p>Aquí es donde aparece la palabra <em>scrap</em>, que no es otra cosa que coger el HTML completo de la página web donde se muestra un dato, y extraer del mismo la información necesaria seleccionando los elementos y tags HTML de interés. Por tanto supone un análisis previo de la estructura de la página, para identificar cómo se presenta la información de interés.</p>
+
+<p>Es importante hacer una parada aquí para pedir encarecidamente que uséis atributos ID de manera consistente: un único ID por página, y que utilicéis un marcado HTML que no sea una auténtica lasaña de elementos anidados sin semántica alguna. Dicho ésto, vamos al programa que hace el scrapping.</p>
+
+<p><strong>Cansino</strong> es un programa escrito en Go que procesa documentos HTML, siendo este documento el correspondiente a la agenda para un día concreto del político de interés. Para ello, coge cada evento de la agenda de ese día, extrae la información de interés y la envía al almacenamiento. Esta información de interés se corresponde con los siguientes campos:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- id: representando un identificador único del evento.
+- date: con la fecha y hora del evento.
+- description: con las palabras clave de la descripción del evento.
+- originalDescription: con la descripción original completa.
+- location: con las palabras clave de la localización del evento.
+- locationDescription: con la localización original completa.
+- attendance: que es a su vez una estructura, una por persona asistente al evento, con los campos:
+    - job: con el puesto de la persona.
+    - fullName: con el nombre completo.
+- owner: con el cargo de la persona dueña de la agenda.
+- region: con el nombre de la región.
+</code></pre></div></div>
+
+<p>El scrapping es posible gracias a <a href="http://go-colly.org/">Go-Colly</a>, que facilita muchísimo esta tarea. Sin embargo, en algún caso he necesitado utilizar <a href="https://github.com/antchfx/htmlquery">htmlquery</a> para parsear directamente el HTML retornado por peticiones Ajax.</p>
+
+<blockquote>
+  <p>En relación a ésto último, es muy frustrante ver cómo la web de la Comunidad de Madrid se folla los verbos HTTP y utiliza POST para retornar los eventos de un día en particular 🤦‍♀️.</p>
+</blockquote>
+
+<p><img src="/web/assets/images/posts/2020-04-16-cansino/agenda-madrid.png" alt="Agenda Madrid" /></p>
+
+<p>Una vez capturada la información de interés, y modelada en una estructura de datos, la quiero indexar en <em>Elasticsearch</em>, por tanto hay que definir los tipos de datos de una manera consecuente a las operaciones que quiero realizar, que no es otra que hacer una búsqueda de tipo <em>full-text</em> en la descripción y en la localización de los eventos, para saber de qué hablan nuestros políticos y, también importante, desde dónde lo hacen. Por tanto, los tipos para cada campo son:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- id: keyword.
+- date: date.
+- description: text.
+- originalDescription: keyword.
+- location: text.
+- locationDescription: keyword.
+- attendance:
+  - job: text.
+  - fullName: text.
+- owner: keyword.
+- region: keyword.
+</code></pre></div></div>
+
+<p>Simplemente añadiendo <a href="https://github.com/elastic/go-elasticsearch">el cliente oficial de Go de Elasticsearch</a> a la aplicación es suficiente para indexar el dato, pero primero, nada más capturar un evento de la web, lo analizo con un <em>Analyzer</em>, que es el responsable de quitar en la descripción y la localización las palabras de paso en castellano (adverbios, pronombres, preposiciones, conjunciones, etc.). Esta funcionalidad ya la trae de serie <em>Elasticsearch</em>, por tanto sólo hay que definirlo en la definición del índice.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"analysis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"analyzer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"spanish_stop"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stop"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"stopwords"</span><span class="p">:</span><span class="w"> </span><span class="s2">"_spanish_"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+
+<p>La carga inicial de todos los documentos, esto es, desde el primer día en el que tienen datos las agendas, la hice en mi equipo, pero he añadido una GitHub Action que se ejecuta cada día a ciertas horas, a modo de cron, para almacenar los eventos del día actual.</p>
+
+<blockquote>
+  <p>Hay que reconocer que Extremadura tiene datos desde el 2011! Castilla-La Mancha conserva un histórico desde el 2017, y la Comunidad de Madrid desde el 2019.</p>
+</blockquote>
+
+<p>Una cosa que he implementado para entender qué está pasando en <strong>Cansino</strong> mientras se ejecuta, consiste en instrumentar el código con el <a href="https://www.elastic.co/guide/en/apm/agent/go/master/index.html">Agente de APM para Go de Elastic</a>, creando trazas de la aplicación cada vez que se almacena un evento. De esta manera puedo saber los tiempos de ejecución y el estado del runtime de Go, entre otras cosas.</p>
+
+<p><img src="/web/assets/images/posts/2020-04-16-cansino/transactions.png" alt="Transactions" />
+<img src="/web/assets/images/posts/2020-04-16-cansino/errors.png" alt="Errors" />
+<img src="/web/assets/images/posts/2020-04-16-cansino/metrics.png" alt="Metrics" />
+<img src="/web/assets/images/posts/2020-04-16-cansino/spans.png" alt="Spans" /></p>
+
+<p>Configurando el entorno para que las siguientes variables estén disponibles es más que suficiente para decirle al agente dónde tiene que enviar las trazas, métricas y errores:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">ELASTIC_APM_SECRET_TOKEN</span><span class="o">=</span>&lt;APM Token&gt;
+<span class="nv">ELASTIC_APM_SERVER_URL</span><span class="o">=</span>&lt;URL del APM Server&gt;
+<span class="nv">ELASTIC_APM_SERVICE_NAME</span><span class="o">=</span>cansino
+<span class="nv">ELASTIC_APM_SERVICE_VERSION</span><span class="o">=</span>1.0.0
+<span class="nv">ELASTIC_APM_CAPTURE_BODY</span><span class="o">=</span>all
+</code></pre></div></div>
+
+<p>Para controlar el flujo de ejecución del programa, <strong>Cansino</strong> es una CLI escrita utilizando <a href="https://github.com/spf13/cobra">Cobra</a>, con dos únicos comandos:</p>
+
+<ul>
+  <li><em>chase</em>, que procesa todos los eventos desde los inicios de cada agenda.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>_get [-d</td>
+          <td>–date 2020-04-14]<em>, el cual procesa los eventos de un único día, pasado por parámetro en formato _YYYY-MM-dd</em>. Si el valor de este parámetro es igual a la cadena “Today”, entonces se usará la fecha del sistema, cargando los eventos de hoy. Este comando es el utilizado por la GitHub Action para capturar los eventos del día.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h2 id="despliegue-y-operaciones">Despliegue y operaciones</h2>
+
+<p>Le doy un apartado especial a esto porque considero muy importante el operar un servicio. Si tenemos los conocimientos adecuados para asegurar la estabilidad del entorno, me parece bien que lo operemos nosotros mismos, pero y si falla el disco, o la memoria, o el servidor no responde a más peticiones… SaaS to the rescue!</p>
+
+<p>Podríamos tener un <a href="https://github.com/elastic/stack-docker">Elastic Stack</a> desplegado en la misma red que el <strong>Cansino</strong> para enviar los datos ahí, pero no tendría mucho valor el tenerlos en local. Mi idea es poder compartir esta información en algún momento, así que por ello, qué mejor opción que utilizar el <a href="https://cloud.elastic.co">Cloud de Elastic</a> para alojar los datos, y que sean ellos los que lo operen por mí, con un modelo de pago por uso (ojo que tiene un trial de 15 días, ¡aprovechadlo!). Es cierto que al ser empleado de Elastic tengo un cluster chiquitito para mí, y por eso he metido a <strong>Cansino</strong> aquí, pero también es verdad que utilizar Elastic Cloud en el arranque de un proyecto te puede ahorrar muchísimo tiempo de setup y operaciones, para luego más adelante ya decidir si quieres hacerlo in-house o continuar con el modelo cloud. En este clúster tengo un <em>Elasticsearch</em>, un <em>Kibana</em>, y un <em>APM Server</em> (o middleware que recibe las trazas del agente de APM para Go, y se las envía al <em>Elasticsearch</em> en un formato conocido), por lo que con un par de click <strong>Cansino</strong> ya podría empezar a funcionar y enviar datos para ser procesados.</p>
+
+<p>Para enviar los datos al Cloud hay que configurar el cliente de <em>Elasticsearch</em> de la siguiente manera:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">cfg</span> <span class="o">:=</span> <span class="n">es</span><span class="o">.</span><span class="n">Config</span><span class="p">{</span>
+        <span class="c">// configuración de Elastic Cloud</span>
+		<span class="n">CloudID</span><span class="o">:</span>   <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"ELASTIC_CLOUD_ID"</span><span class="p">),</span>
+		<span class="n">Password</span><span class="o">:</span>  <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"ELASTIC_CLOUD_AUTH"</span><span class="p">),</span>
+        <span class="n">Username</span><span class="o">:</span>  <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"ELASTIC_CLOUD_USERNAME"</span><span class="p">),</span>
+        <span class="c">// configuración para el agente de APM para Go</span>
+		<span class="n">Transport</span><span class="o">:</span> <span class="n">apmes</span><span class="o">.</span><span class="n">WrapRoundTripper</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">DefaultTransport</span><span class="p">),</span>
+	<span class="p">}</span>
+    <span class="n">client</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">es</span><span class="o">.</span><span class="n">NewClient</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Y no hay nada más que hacer ahí 😊.</p>
+
+<p>En cuanto a la parte de visualización, he creado varias visualizaciones específicas en <em>Kibana</em> en función de lo que quería obtener, como por ejemplo:</p>
+
+<ul>
+  <li>comparar números de eventos en torno a ciertas fechas de interés, como elecciones…</li>
+  <li>nube de tags con las palabras más utilizadas en las descripciones de los eventos de la agenda</li>
+  <li>nube de tags con las palabras más utilizadas en las localizaciones de los eventos de la agenda</li>
+</ul>
+
+<p>¡Pero estoy seguro que se te ocurren muchos más!</p>
+
+<h2 id="y-qué-regiones-estoy-analizando">¿Y qué regiones estoy analizando?</h2>
+
+<p><strong>Cansino</strong> analiza, por el momento, tres regiones de España:</p>
+
+<ul>
+  <li><a href="https://transparencia.castillalamancha.es/agenda/198">Castilla-La Mancha</a> (mi región!)</li>
+  <li><a href="http://www.juntaex.es//web/agenda-presidencia">Extremadura</a></li>
+  <li><a href="https://www.comunidad.madrid/agenda-gobierno">Madrid</a></li>
+</ul>
+
+<h2 id="qué-más-se-podría-hacer-con-el-stack">¿Qué más se podría hacer con el Stack?</h2>
+
+<p>Podríamos además aumentar los logs de <strong>Cansino</strong> y enviarlos con <a href="https://www.elastic.co/beats/filebeat"><strong>Filebeat</strong></a> al Stack, de modo que pudiésemos correlar eventos de log con trazas y/o métricas de la aplicación.</p>
+
+<p>No soy para nada un experto en ML, pero seguro que podríamos aplicar Machine Learning y aprender un poco de los eventos, su frecuencia y su temática, y observar anomalías.</p>
+
+<p>¿Se os ocurre algo más?</p>
+
+<h2 id="y-si-quiero-analizar-qué-dicen-en-mi-región">¿Y si quiero analizar qué dicen en mi región?</h2>
+
+<p>Si quieres que añada otra región, please <a href="https://github.com/mdelapenya/cansino/issues/new">abre una issue</a>.</p>
+
+<h2 id="quieres-acceder-a-los-dashboards">¿Quieres acceder a los dashboards?</h2>
+
+<p>Si quieres acceder a un dashboard, please envíame un email a <em>mdelapenya at gmail.com</em>.</p>
+
+        </section>
+    </article>
+
+    <footer id="post-meta" class="post__meta clearfix">
+        <a href="http://twitter.com/GDGToledo_es">
+            <img class="avatar" src="/web/assets/images/avatar.png">
+            <div>
+                <span class="dark">GDG Toledo</span>
+                <span>El espíritu de este grupo es fomentar y compartir las buenas prácticas y las experiencias en herramientas, frameworks, lenguajes, etc</span>
+            </div>
+        </a>
+        <section id="sharing">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=https://gdgtoledo.github.io/posts/2020-04-16-cansino/ - Cansino by @GDGToledo_es"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+        </section>
+    </footer>
+
+    
+        <div class="archive readmore">
+            <h3>Comments</h3>
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'GDGToledo';
+        var disqus_developer = 0; // developer mode is on
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+        </div>
+    
+
+    
+
+</div>
+
+<footer class="footer">
+    <p class="small">Hecho con 🤘  por GDG Toledo</p>
+</footer>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/web/assets/js/main.js"></script>
+    <script src="/web/assets/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-XXXXXXXX-X', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
+
+
