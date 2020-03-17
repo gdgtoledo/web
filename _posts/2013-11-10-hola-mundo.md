@@ -4,6 +4,9 @@ title:  "Hola Mundo"
 date:   2013-11-10 10:18:00
 description: Bienvenidos al blog de GDG Toledo
 published: true
+author:
+  name: GDG Toledo
+  twitter: gdgtoledo_es
 ---
 
 # Títulos y párrafos
