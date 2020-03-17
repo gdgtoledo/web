@@ -1,0 +1,36 @@
+name: Checks in a PR
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: Checkout
+      uses: actions/checkout@v2
+    - 
+      name: Build Static Files
+      env:
+        JEKYLL_VERSION: ${{ 3.8 }}
+      run: |
+        # Build static files
+        make build
+        echo "Build finished: $?"
+    - 
+      name: Check modified files
+      run: |
+        # Check if there are git changes: dirty workspace, tracked or untracked files
+        gitChecks=$(.github/scripts/git-checks.sh)
+        exit "$?"
+    - 
+      name: Comment failure in the PR
+      if: failure()
+      uses: harupy/comment-on-pr@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        filename: comment-jekyll-build-files.md

@@ -16,6 +16,15 @@
 
     <main class="app-container">
       <nav class="navigation">
+    <a href="/web/" class="navigation__logo">
+        <svg viewBox="0 0 474 541" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M199.374 218H165V252.375H199.374V218ZM309.374 218H275V252.375H309.374V218Z" fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M236.16 0H202.465V34.376H236.16H236.844H270.537V0H236.844H236.16ZM165.774 36.166H200.148V70.543H165.774V36.166ZM307.228 35.166H272.855V69.543H307.228V35.166ZM129.08 74.334H163.457V108.503V108.71V140.67H168.774H169.457H202.465H203.148H236.16H236.844H269.855H270.537H303.547H304.228H310.547V108.71V108.503V74.334H344.923V108.503V108.71V140.67H370.934H371.617H404.628H405.31H438.628H439.002H473.002V175.043H439.002H438.628H405.31H404.628H389.951V207.415V208.624V240.581V241.79V274.581V274.959V308.959H355.577V274.959V274.581V241.79V240.581V208.624V207.415V175.043H337.923H337.241H304.228H303.547H270.537H269.855H236.844H236.16H203.148H202.465H169.457H168.774H135.761H135.08H117.951V207.415V208.624V240.581V241.79V274.581V274.959V308.959H83.577V274.959V274.581V241.79V240.581V208.624V207.415V175.043H68.374H67.693H34.374H34H0V140.67H34H34.374H67.693H68.374H101.387H102.068H129.08V108.71V108.503V74.334ZM185.772 305H219.467H220.151H253.467H253.844H287.844V339.25H321.49V373.334H354.548H355.23H388.924V407.709H355.23V440.879H321.535V472.434V473.045V506.809H287.844V540.374H253.844H253.467H220.151H219.467H185.772V506.809H152.081V473.045V472.434V440.879H118.387V407.709H84.694V373.334H118.387H119.068H152.117V339.25H185.772V305ZM287.162 438.67V472.434V473.045V506H253.844H253.467H220.151H219.467H186.455V473.045V472.434V438.67H152.764V407.709V406.503V373.625H186.491V339.374H219.467H220.151H253.467H253.844H287.117V373.625H320.854V406.503V407.709V438.67H287.162ZM84.375 339.168H50V373.543H84.375V339.168ZM389.241 339.168H423.617V373.543H389.241V339.168Z"
+                fill="white" />
+        </svg>
+    </a>
     <ul class="navigation__items">
         
             <li class="navigation__item">
@@ -39,13 +48,6 @@
                 </a>
             </li>
         
-            <li class="navigation__item">
-                <a  class="navigation__link"
-                href="/web/credits">
-                    credits
-                </a>
-            </li>
-        
     </ul>
 </nav>
 
@@ -53,17 +55,21 @@
 
     <article class="meetup">
         <header class="meetup__header">
-            <h1>Primer Hackday de GDG Toledo</h1>
-            <h2>Hackday temático de microservicios, testing y Docker</h2>
-			<h3>Manuel de la Peña</h3>
-            <h4>June 16, 2018 | 9 asistentes | Centro Cívico Buenavista </h4>
+            <h1 class="meetup__title">Primer Hackday de GDG Toledo</h1>
+            <h2 class="meetup__description">> Hackday temático de microservicios, testing y Docker</h2>
+            <h3 class="meetup__details">
+                <span class="meetup__date">June 16, 2018</span>
+                <span class="meetup__attendees">9 asistentes</span>
+                <span class="meetup__location">Centro Cívico Buenavista</span>
+            </h3>
+            <h4 class="meetup__speaker">> Manuel de la Peña</h4>
         </header>
         <section class="meetup__body">
-            <p><p>Os lo explicamos todo en este <a href="https://github.com/gdgtoledo/docker-kata">repositorio de Github</a>.</p>
+            <p><h2 id="descripción">Descripción</h2>
+<p>Os lo explicamos todo en este <a href="https://github.com/gdgtoledo/docker-kata">repositorio de Github</a>.
+Así que si estás animad@ vente!</p>
 
-<p>Así que si estás animad@ vente!</p>
-
-<p>La agenda del día sería:</p>
+<h2 id="agenda">Agenda</h2>
 
 <ul>
   <li>8:00-8:30 - Presentaciones, selección de equipos y reparto de tareas</li>
@@ -74,6 +80,7 @@
   <li>14:00 - 15:00 - Presentación de los proyectos</li>
 </ul>
 
+<h2 id="extras">Extras</h2>
 <p>A lo largo de toda la jornada tendremos fruta (para l@s más san@s), algo de bollería (para l@s más insan@s), agua, y café de cápsulas.</p>
 </p>
         </section>
@@ -102,6 +109,10 @@
     </article>
 
 </div>
+
+<footer class="footer">
+    <p class="small">Hecho con 🤘  por GDG Toledo</p>
+</footer>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
