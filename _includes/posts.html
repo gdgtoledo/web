@@ -16,7 +16,7 @@
                         <a class="post__title" href="{{ "/" | relative_url  }}{{ post.url | remove_first: '/' }}" >
                             {{ post.title }}
                         </a>
-                        <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
+                        <aside class="post__date">{{ post.date | date:"%b %d, %Y" }}</aside>
                     </section>
                 </article>
             {% endfor %}
@@ -26,7 +26,7 @@
                     <div class="post__head">
                         <section class="post__info">
                             <a class="post__title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                            <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
+                            <aside class="post__date">{{ post.date | date:"%b %d, %Y" }}</aside>
                         </section>
                     </div>
                     <section class="post__description">
