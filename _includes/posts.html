@@ -28,7 +28,14 @@
                     <div class="post__head">
                         <section class="post__info">
                             <a class="post__title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                            <aside class="post__date">{{ post.date | date:"%b %d, %Y" }}</aside>
+                            <aside class="post__details">
+                                <span class="post__date">
+                                    {{ post.date | date:"%b %d, %Y" }}
+                                </span>
+                                <span class="post__author">
+                                    Por {{ post.author.name }}
+                                </span>
+                            </aside>
                         </section>
                     </div>
                     <section class="post__description">
