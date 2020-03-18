@@ -12,3 +12,8 @@ build:
 run:
 	@echo "Running Static files"
 	docker-compose up --build
+
+.PHONY: stop
+stop:
+	@echo "Stoping Jekyll"
+	docker-compose down
