@@ -10,23 +10,25 @@
 
     <div class="posts__list">
         {% if include.limit %}
-            {% for post in site.posts limit:4 %}
+            {% assign sorted_posts = (site.posts | sort: 'date') | reverse %}
+            {% for post in sorted_posts limit:4 %}
                 <article class="post post_short">
                     <section class="post__info">
                         <a class="post__title" href="{{ "/" | relative_url  }}{{ post.url | remove_first: '/' }}" >
                             {{ post.title }}
                         </a>
-                        <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
+                        <aside class="post__date">{{ post.date | date:"%b %d, %Y" }}</aside>
                     </section>
                 </article>
             {% endfor %}
         {% else %}
-            {% for post in paginator.posts %}
+            {% assign sorted_posts = (paginator.posts | sort: 'date') | reverse %}
+            {% for post in sorted_posts %}
                 <article class="post">
                     <div class="post__head">
                         <section class="post__info">
                             <a class="post__title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                            <aside class="post__date">{{ post.date | date:"%b %d" }}</aside>
+                            <aside class="post__date">{{ post.date | date:"%b %d, %Y" }}</aside>
                         </section>
                     </div>
                     <section class="post__description">

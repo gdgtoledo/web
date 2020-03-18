@@ -47,6 +47,11 @@ make run
 
 y abrir el browser en `http://localhost:4000`
 
+- Parar el servidor:
+````shell
+make stop
+````
+
 - si solo quieres compilar el proyecto puedes hacer uso de la imagen oficial de Jekyll en DockerHub:
 
 ````shell

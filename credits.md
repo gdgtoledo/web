@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Créditos
+author:
+  name: GDG Toledo
+  twitter: gdgtoledo_es
 ---
 
 ## Iconos
