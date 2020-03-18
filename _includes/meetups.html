@@ -46,7 +46,7 @@
                         </section>
                     </div>
                     <section class="meetup__speaker">
-                        <a class="meetup__speaker-name" href="{{ meetup.url }}" >
+                        <a class="meetup__speaker-name" href="{{ meetup.url | relative_url }}" >
                             {{ meetup.speaker.name }}
                         </a>
                     </section>
