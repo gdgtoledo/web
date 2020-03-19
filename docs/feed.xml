@@ -3,8 +3,8 @@
   <channel>
     <title>GDG Toledo</title>
     <description>El espíritu de este grupo es fomentar y compartir las buenas prácticas y las experiencias en herramientas, frameworks, lenguajes, etc</description>
-    <link>https://gdgtoledo.github.io/web</link>
-    <atom:link href="https://gdgtoledo.github.io/web/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:5000</link>
+    <atom:link href="http://localhost:5000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Cansino</title>
@@ -17,23 +17,8 @@
 </description>
         
         <pubDate>Mon, 16 Mar 2020 14:00:00 +0100</pubDate>
-        <link>https://gdgtoledo.github.io/web/posts/2020-04-16-cansino/</link>
-        <guid isPermaLink="true">https://gdgtoledo.github.io/web/posts/2020-04-16-cansino/</guid>
-      </item>
-    
-      <item>
-        <title>Hola Mundo</title>
-        
-          <dc:creator>GDG Toledo</dc:creator>
-        
-        
-          <description>&lt;h1 id=&quot;títulos-y-párrafos&quot;&gt;Títulos y párrafos&lt;/h1&gt;
-
-</description>
-        
-        <pubDate>Sun, 10 Nov 2013 11:18:00 +0100</pubDate>
-        <link>https://gdgtoledo.github.io/web/posts/2013-11-10-hola-mundo/</link>
-        <guid isPermaLink="true">https://gdgtoledo.github.io/web/posts/2013-11-10-hola-mundo/</guid>
+        <link>http://localhost:5000/posts/2020-04-16-cansino/</link>
+        <guid isPermaLink="true">http://localhost:5000/posts/2020-04-16-cansino/</guid>
       </item>
     
   </channel>
