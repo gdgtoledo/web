@@ -11,8 +11,10 @@ archive: true
         <header class="post__header">
             <h1 class="post__title">{{ page.title }}</h1>
             <h2 class="post__description">> {{ page.description }}</h2>
-            <h3 class="post__date">{{ page.date | date:"%B %-d, %Y" }}</h3>
-            <h4 class="post__author">Por {{ page.author.name }} (<a class="twitter" href="https://twitter.com/{{ page.author.twitter }}"><span class="icon-twitter"> @{{ page.author.twitter }}</span></a>)</h4>
+            <h3 class="post__details">
+                <span class="post__date">{{ page.date | date:"%B %-d, %Y" }}</span>
+                <span class="post__author">Por {{ page.author.name }} (<a class="twitter" href="https://twitter.com/{{ page.author.twitter }}"><span class="icon-twitter"> @{{ page.author.twitter }}</span></a>)</span>
+            </h3>
         </header>
         <section id="post-body" class="post__body">
             {{content}}
