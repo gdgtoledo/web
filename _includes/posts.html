@@ -17,7 +17,14 @@
                         <a class="post__title" href="{{ "/" | relative_url  }}{{ post.url | remove_first: '/' }}" >
                             {{ post.title }}
                         </a>
-                        <aside class="post__date">{{ post.date | date:"%b %d, %Y" }}</aside>
+                        <aside class="post__details">
+                            <span class="post__date">
+                                {{ post.date | date:"%b %d, %Y" }}
+                            </span>
+                            <span class="post__author">
+                                {{ post.author.name }}
+                            </span>
+                        </aside>
                     </section>
                 </article>
             {% endfor %}
@@ -27,13 +34,15 @@
                 <article class="post">
                     <div class="post__head">
                         <section class="post__info">
-                            <a class="post__title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                            <a class="post__title" href="{{ post.url | relative_url }}">
+                                {{ post.title | escape }}
+                            </a>
                             <aside class="post__details">
                                 <span class="post__date">
                                     {{ post.date | date:"%b %d, %Y" }}
                                 </span>
                                 <span class="post__author">
-                                    Por {{ post.author.name }}
+                                    {{ post.author.name }}
                                 </span>
                             </aside>
                         </section>
