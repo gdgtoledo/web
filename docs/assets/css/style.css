@@ -1050,10 +1050,6 @@ h6 {
   flex-wrap: wrap;
 }
 
-.posts__list .post {
-  margin: 0;
-}
-
 .meetups__list .meetup
 .posts__list .post {
   display: flex;
@@ -1082,6 +1078,7 @@ h6 {
   grid-template-areas: "label empty";
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  min-height: 55px;
 }
 
 .meetups__list .meetup__info:hover:before,
