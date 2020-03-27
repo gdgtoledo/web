@@ -3,8 +3,8 @@
   <channel>
     <title>GDG Toledo</title>
     <description>El espíritu de este grupo es fomentar y compartir las buenas prácticas y las experiencias en herramientas, frameworks, lenguajes, etc</description>
-    <link>http://0.0.0.0:5000</link>
-    <atom:link href="http://0.0.0.0:5000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://gdgtoledo.github.io/web</link>
+    <atom:link href="https://gdgtoledo.github.io/web/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Cansino</title>
@@ -14,179 +14,11 @@
         
           <description>&lt;p&gt;A veces los políticos y las políticas de turno hablan mucho sobre lo que ellos dicen que es importante para la ciudadanía, y a su vez, muchas otras veces encontramos que no hacen lo que dicen.&lt;/p&gt;
 
-&lt;p&gt;Por ello, se me ha ocurrido el acceder a las agendas públicas de ciertos políticos, en particular presidentes de comunidades autónomas, hacer un scrapping de las mismas puesto que &lt;strong&gt;no ofrecen un API público para consultarlas&lt;/strong&gt;, y almacenar los eventos de cada día en un repositorio. De esta manera, seríamos capaces de consultar los citados eventos de una manera estructurada utilizando técnicas de BigData, y verificar si lo que estos políticos hacen (porque está en sus agendas) se alinea con lo que realmente prometen.&lt;/p&gt;
-
-&lt;p&gt;Es cierto que este enfoque tendría cierto sesgo al no publicar éstos realmente lo que hacen, sino que se centran únicamente en compartir un mero texto muy vago, con poca literatura: &lt;em&gt;‘Asiste al consejo blah blah blah’&lt;/em&gt;, supongo que para que no pillarse los dedos. Pero es lo que tenemos. ¡Ya nos gustaría que los gobernantes fueran más transparentes y nos facilitaran más información!&lt;/p&gt;
-
-&lt;p&gt;Con todo esto en la mano, queremos procesar esos eventos de las agendas, quitar las palabras de paso en castellano (preposiciones, conjunciones, etc.), y almacenar cada evento en un repositorio que permita realizar analíticas sobre este conjunto de datos. Y aprovechando que &lt;em&gt;Elasticsearch&lt;/em&gt; es un almacenamiento orientado a búsquedas, y que trabajo en &lt;a href=&quot;https://www.elastic.co&quot;&gt;Elastic&lt;/a&gt;, qué mejor que aprovechar su potencia para almacenar en él las agendas, procesar el contenido, y mostrar gráficos de interés en &lt;em&gt;Kibana&lt;/em&gt;, como por ejemplo una nube de tags con las palabras más utilizadas. El resultado para Castilla-La Mancha, podría ser algo así:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/web/assets/images/posts/2020-04-16-cansino/dashboard-sample.png&quot; alt=&quot;Castilla-La Mancha Dashboard&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Como podéis comprobar, muchos políticos simplemente “asisten” a reuniones. Como ya dije antes, como ciudadano me encantaría que fueran mucho más transparentes de lo que en realidad son.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Es por ello que he llamado a este servicio &lt;strong&gt;Cansino&lt;/strong&gt;, porque persigue de manera incansable al político de turno, como el famoso &lt;a href=&quot;http://www.josemota.com/personaje/el-cansino-historico/&quot;&gt;Cansino Histórico de José Mota&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;stack-tecnológico&quot;&gt;Stack tecnológico&lt;/h2&gt;
-
-&lt;p&gt;En cuanto al stack, os he dado unas pinceladas del almacenamiento primario, &lt;em&gt;Elasticsearch&lt;/em&gt;, así como la aplicación de visualización de datos, &lt;em&gt;Kibana&lt;/em&gt;. Hablaré de ellos más adelante. Pero, ¿cómo cogemos, procesamos y enviamos las agendas al almacenamiento principal?&lt;/p&gt;
-
-&lt;p&gt;Aquí es donde aparece la palabra &lt;em&gt;scrap&lt;/em&gt;, que no es otra cosa que coger el HTML completo de la página web donde se muestra un dato, y extraer del mismo la información necesaria seleccionando los elementos y tags HTML de interés. Por tanto supone un análisis previo de la estructura de la página, para identificar cómo se presenta la información de interés.&lt;/p&gt;
-
-&lt;p&gt;Es importante hacer una parada aquí para pedir encarecidamente que uséis atributos ID de manera consistente: un único ID por página, y que utilicéis un marcado HTML que no sea una auténtica lasaña de elementos anidados sin semántica alguna. Dicho ésto, vamos al programa que hace el scrapping.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Cansino&lt;/strong&gt; es un programa escrito en Go que procesa documentos HTML, siendo este documento el correspondiente a la agenda para un día concreto del político de interés. Para ello, coge cada evento de la agenda de ese día, extrae la información de interés y la envía al almacenamiento. Esta información de interés se corresponde con los siguientes campos:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- id: representando un identificador único del evento.
-- date: con la fecha y hora del evento.
-- description: con las palabras clave de la descripción del evento.
-- originalDescription: con la descripción original completa.
-- location: con las palabras clave de la localización del evento.
-- locationDescription: con la localización original completa.
-- attendance: que es a su vez una estructura, una por persona asistente al evento, con los campos:
-    - job: con el puesto de la persona.
-    - fullName: con el nombre completo.
-- owner: con el cargo de la persona dueña de la agenda.
-- region: con el nombre de la región.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El scrapping es posible gracias a &lt;a href=&quot;http://go-colly.org/&quot;&gt;Go-Colly&lt;/a&gt;, que facilita muchísimo esta tarea. Sin embargo, en algún caso he necesitado utilizar &lt;a href=&quot;https://github.com/antchfx/htmlquery&quot;&gt;htmlquery&lt;/a&gt; para parsear directamente el HTML retornado por peticiones Ajax.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;En relación a ésto último, es muy frustrante ver cómo la web de la Comunidad de Madrid se folla los verbos HTTP y utiliza POST para retornar los eventos de un día en particular 🤦‍♀️.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/web/assets/images/posts/2020-04-16-cansino/agenda-madrid.png&quot; alt=&quot;Agenda Madrid&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Una vez capturada la información de interés, y modelada en una estructura de datos, la quiero indexar en &lt;em&gt;Elasticsearch&lt;/em&gt;, por tanto hay que definir los tipos de datos de una manera consecuente a las operaciones que quiero realizar, que no es otra que hacer una búsqueda de tipo &lt;em&gt;full-text&lt;/em&gt; en la descripción y en la localización de los eventos, para saber de qué hablan nuestros políticos y, también importante, desde dónde lo hacen. Por tanto, los tipos para cada campo son:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- id: keyword.
-- date: date.
-- description: text.
-- originalDescription: keyword.
-- location: text.
-- locationDescription: keyword.
-- attendance:
-  - job: text.
-  - fullName: text.
-- owner: keyword.
-- region: keyword.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Simplemente añadiendo &lt;a href=&quot;https://github.com/elastic/go-elasticsearch&quot;&gt;el cliente oficial de Go de Elasticsearch&lt;/a&gt; a la aplicación es suficiente para indexar el dato, pero primero, nada más capturar un evento de la web, lo analizo con un &lt;em&gt;Analyzer&lt;/em&gt;, que es el responsable de quitar en la descripción y la localización las palabras de paso en castellano (adverbios, pronombres, preposiciones, conjunciones, etc.). Esta funcionalidad ya la trae de serie &lt;em&gt;Elasticsearch&lt;/em&gt;, por tanto sólo hay que definirlo en la definición del índice.&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;settings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;analysis&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;analyzer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-                &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;spanish_stop&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stop&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;stopwords&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;_spanish_&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;La carga inicial de todos los documentos, esto es, desde el primer día en el que tienen datos las agendas, la hice en mi equipo, pero he añadido una GitHub Action que se ejecuta cada día a ciertas horas, a modo de cron, para almacenar los eventos del día actual.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Hay que reconocer que Extremadura tiene datos desde el 2011! Castilla-La Mancha conserva un histórico desde el 2017, y la Comunidad de Madrid desde el 2019.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Una cosa que he implementado para entender qué está pasando en &lt;strong&gt;Cansino&lt;/strong&gt; mientras se ejecuta, consiste en instrumentar el código con el &lt;a href=&quot;https://www.elastic.co/guide/en/apm/agent/go/master/index.html&quot;&gt;Agente de APM para Go de Elastic&lt;/a&gt;, creando trazas de la aplicación cada vez que se almacena un evento. De esta manera puedo saber los tiempos de ejecución y el estado del runtime de Go, entre otras cosas.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/web/assets/images/posts/2020-04-16-cansino/transactions.png&quot; alt=&quot;Transactions&quot; /&gt;
-&lt;img src=&quot;/web/assets/images/posts/2020-04-16-cansino/errors.png&quot; alt=&quot;Errors&quot; /&gt;
-&lt;img src=&quot;/web/assets/images/posts/2020-04-16-cansino/metrics.png&quot; alt=&quot;Metrics&quot; /&gt;
-&lt;img src=&quot;/web/assets/images/posts/2020-04-16-cansino/spans.png&quot; alt=&quot;Spans&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Configurando el entorno para que las siguientes variables estén disponibles es más que suficiente para decirle al agente dónde tiene que enviar las trazas, métricas y errores:&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;ELASTIC_APM_SECRET_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;APM Token&amp;gt;
-&lt;span class=&quot;nv&quot;&gt;ELASTIC_APM_SERVER_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;URL del APM Server&amp;gt;
-&lt;span class=&quot;nv&quot;&gt;ELASTIC_APM_SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;cansino
-&lt;span class=&quot;nv&quot;&gt;ELASTIC_APM_SERVICE_VERSION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.0.0
-&lt;span class=&quot;nv&quot;&gt;ELASTIC_APM_CAPTURE_BODY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;all
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Para controlar el flujo de ejecución del programa, &lt;strong&gt;Cansino&lt;/strong&gt; es una CLI escrita utilizando &lt;a href=&quot;https://github.com/spf13/cobra&quot;&gt;Cobra&lt;/a&gt;, con dos únicos comandos:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;chase&lt;/strong&gt;, que procesa todos los eventos desde los inicios de cada agenda.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;**get [-d&lt;/td&gt;
-          &lt;td&gt;–date 2020-04-14]**, el cual procesa los eventos de un único día, pasado por parámetro en formato &lt;em&gt;YYYY-MM-dd&lt;/em&gt;. Si el valor de este parámetro es igual a la cadena “Today”, entonces se usará la fecha del sistema, cargando los eventos de hoy. Este comando es el utilizado por la GitHub Action para capturar los eventos del día.&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;despliegue-y-operaciones&quot;&gt;Despliegue y operaciones&lt;/h2&gt;
-
-&lt;p&gt;Le doy un apartado especial a esto porque considero muy importante el operar un servicio. Si tenemos los conocimientos adecuados para asegurar la estabilidad del entorno, me parece bien que lo operemos nosotros mismos, pero y si falla el disco, o la memoria, o el servidor no responde a más peticiones… SaaS to the rescue!&lt;/p&gt;
-
-&lt;p&gt;Podríamos tener un &lt;a href=&quot;https://github.com/elastic/stack-docker&quot;&gt;Elastic Stack&lt;/a&gt; desplegado en la misma red que el &lt;strong&gt;Cansino&lt;/strong&gt; para enviar los datos ahí, pero no tendría mucho valor el tenerlos en local. Mi idea es poder compartir esta información en algún momento, así que por ello, qué mejor opción que utilizar el &lt;a href=&quot;https://cloud.elastic.co&quot;&gt;Cloud de Elastic&lt;/a&gt; para alojar los datos, y que sean ellos los que lo operen por mí, con un modelo de pago por uso (ojo que tiene un trial de 15 días, ¡aprovechadlo!). Es cierto que al ser empleado de Elastic tengo un cluster chiquitito para mí, y por eso he metido a &lt;strong&gt;Cansino&lt;/strong&gt; aquí, pero también es verdad que utilizar Elastic Cloud en el arranque de un proyecto te puede ahorrar muchísimo tiempo de setup y operaciones, para luego más adelante ya decidir si quieres hacerlo in-house o continuar con el modelo cloud. En este clúster tengo un &lt;em&gt;Elasticsearch&lt;/em&gt;, un &lt;em&gt;Kibana&lt;/em&gt;, y un &lt;em&gt;APM Server&lt;/em&gt; (o middleware que recibe las trazas del agente de APM para Go, y se las envía al &lt;em&gt;Elasticsearch&lt;/em&gt; en un formato conocido), por lo que con un par de click &lt;strong&gt;Cansino&lt;/strong&gt; ya podría empezar a funcionar y enviar datos para ser procesados.&lt;/p&gt;
-
-&lt;p&gt;Para enviar los datos al Cloud hay que configurar el cliente de &lt;em&gt;Elasticsearch&lt;/em&gt; de la siguiente manera:&lt;/p&gt;
-
-&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;cfg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;es&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;// configuración de Elastic Cloud&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;CloudID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Getenv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ELASTIC_CLOUD_ID&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;Password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Getenv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ELASTIC_CLOUD_AUTH&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Getenv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ELASTIC_CLOUD_USERNAME&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;// configuración para el agente de APM para Go&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;Transport&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apmes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WrapRoundTripper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DefaultTransport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;es&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NewClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cfg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Y no hay nada más que hacer ahí 😊.&lt;/p&gt;
-
-&lt;p&gt;En cuanto a la parte de visualización, he creado varias visualizaciones específicas en &lt;em&gt;Kibana&lt;/em&gt; en función de lo que quería obtener, como por ejemplo:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;comparar números de eventos en torno a ciertas fechas de interés, como elecciones…&lt;/li&gt;
-  &lt;li&gt;nube de tags con las palabras más utilizadas en las descripciones de los eventos de la agenda&lt;/li&gt;
-  &lt;li&gt;nube de tags con las palabras más utilizadas en las localizaciones de los eventos de la agenda&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;¡Pero estoy seguro que se te ocurren muchos más!&lt;/p&gt;
-
-&lt;h2 id=&quot;y-qué-regiones-estoy-analizando&quot;&gt;¿Y qué regiones estoy analizando?&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Cansino&lt;/strong&gt; analiza, por el momento, tres regiones de España:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://transparencia.castillalamancha.es/agenda/198&quot;&gt;Castilla-La Mancha&lt;/a&gt; (mi región!)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.juntaex.es//web/agenda-presidencia&quot;&gt;Extremadura&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.comunidad.madrid/agenda-gobierno&quot;&gt;Madrid&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;qué-más-se-podría-hacer-con-el-stack&quot;&gt;¿Qué más se podría hacer con el Stack?&lt;/h2&gt;
-
-&lt;p&gt;Podríamos además aumentar los logs de &lt;strong&gt;Cansino&lt;/strong&gt; y enviarlos con &lt;a href=&quot;https://www.elastic.co/beats/filebeat&quot;&gt;&lt;strong&gt;Filebeat&lt;/strong&gt;&lt;/a&gt; al Stack, de modo que pudiésemos correlar eventos de log con trazas y/o métricas de la aplicación.&lt;/p&gt;
-
-&lt;p&gt;No soy para nada un experto en ML, pero seguro que podríamos aplicar Machine Learning y aprender un poco de los eventos, su frecuencia y su temática, y observar anomalías.&lt;/p&gt;
-
-&lt;p&gt;¿Se os ocurre algo más?&lt;/p&gt;
-
-&lt;h2 id=&quot;y-si-quiero-analizar-qué-dicen-en-mi-región&quot;&gt;¿Y si quiero analizar qué dicen en mi región?&lt;/h2&gt;
-
-&lt;p&gt;Si quieres que añada otra región, please &lt;a href=&quot;https://github.com/mdelapenya/cansino/issues/new&quot;&gt;abre una issue&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;quieres-acceder-a-los-dashboards&quot;&gt;¿Quieres acceder a los dashboards?&lt;/h2&gt;
-
-&lt;p&gt;Si quieres acceder a un dashboard, please envíame un email a &lt;em&gt;mdelapenya at gmail.com&lt;/em&gt;.&lt;/p&gt;
 </description>
         
-        <pubDate>Mon, 16 Mar 2020 13:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:5000/posts/2020-04-16-cansino/</link>
-        <guid isPermaLink="true">http://0.0.0.0:5000/posts/2020-04-16-cansino/</guid>
+        <pubDate>Mon, 16 Mar 2020 14:00:00 +0100</pubDate>
+        <link>https://gdgtoledo.github.io/web/posts/2020-04-16-cansino/</link>
+        <guid isPermaLink="true">https://gdgtoledo.github.io/web/posts/2020-04-16-cansino/</guid>
       </item>
     
   </channel>
