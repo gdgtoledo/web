@@ -589,10 +589,15 @@ h6 {
   padding: 11vh 6vw 6vh 6vw;
 }
 
+@media all and (min-width: 850px) {
+  .page-container {
+    padding: 11vh 25vw 6vh 25vw;
+  }
+}
+
 .page-container section:last-child ul {
   margin-bottom: 0;
 }
-
 
 .app-container {
   width: 100%;
