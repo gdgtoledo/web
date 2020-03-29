@@ -653,8 +653,18 @@ h6 {
   transition: all 1s ease-out;
 }
 
-.footer p {
-  margin: 0;
+.footer__code-of-conduct {
+  font-family: var(--font-family-rubik);
+  font-weight: var(--text-weight-medium);
+  font-size: var(--text-size-m);
+  color: var(--text-color-primary);
+  background-color: var(--color-white);
+}
+
+.footer__code-of-conduct:hover {
+  background-color: var(--text-color-primary);
+  color: var(--text-color-white);
+  border: 4px var(--color-primary) solid;
 }
 
 /*            *\

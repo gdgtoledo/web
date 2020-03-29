@@ -19,5 +19,7 @@
             {% include mail_icon.html %}
         </a>
     </div>
-    <p class="small">Hecho con 🤘  por {{ site.author }}</p>
+    <a class="footer__code-of-conduct" href="{{ 'code-of-conduct' | relative_url  }}">
+        Código de conducta de {{ site.author }}
+    </a>
 </footer>
