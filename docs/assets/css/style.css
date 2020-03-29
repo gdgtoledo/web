@@ -621,10 +621,11 @@ h6 {
 \*            */
 
 .footer {
-  height: 50px;
+  min-height: 50px;
   position: fixed;
   bottom: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -635,6 +636,19 @@ h6 {
   padding-left: 6vw;
   padding-right: 6vw;
 }
+
+@media (max-width: 500px) {
+  .footer {
+      padding-bottom: 20px;
+      padding-top: 20px;
+     justify-content: center;
+  }
+
+  .footer__code-of-conduct {
+    margin-top: 15px;
+  }
+}
+
 
 .footer__social-networks {
   display: flex;
