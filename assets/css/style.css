@@ -681,11 +681,13 @@ h6 {
 
 /*            *\
 |              |
+|    .page.    |
 |     post     |
 |    meetup    |
 |              |
 \*            */
 
+.page,
 .post,
 .meetup {
   margin-bottom: 15px;
@@ -697,44 +699,56 @@ h6 {
   min-height: 55px;
 }
 
-
+.page__header,
 .post__header,
 .meetup__header,
 .member__header {
   margin-bottom: 30px;
 }
 
+.page__header h1,
 .post__header h1,
 .meetup__header h1,
 .member__header h1,
+.page__body ol,
 .post__body ol,
 .meetup__body ol,
+.page__body ul,
 .post__body ul,
 .meetup__body ul,
 .meetup__body h1,
+.page__body h1,
 .post__body h1,
 .meetup__body h1,
+.page__body h2,
 .post__body h2,
 .meetup__body h2,
+.page__body h3,
 .post__body h3,
 .meetup__body h3,
 .member__header h3,
+.page__body h4,
 .post__body h4,
 .meetup__body h4,
+.page__body h5,
 .post__body h5,
 .meetup__body h5,
+.page__body h6,
 .post__body h6,
 .meetup__body h6 {
   margin-bottom: 20px;
 }
 
+.page__body ol,
 .post__body ol,
 .meetup__body ol,
+.page__body ul,
 .post__body ul,
 .meetup__body ul {
  margin-top: 20px;
 }
 
+.page__header .page__title,
 .post__header .post__title,
 .member__header .member__title,
 .meetup__header .meetup__title {
@@ -747,6 +761,7 @@ h6 {
   font-size: var(--text-size-3xl);
 }
 
+.page__header  h1
 .post__header  h1
 .meetup__header h1,
 .post__header h2,
@@ -754,6 +769,7 @@ h6 {
   text-align: left;
 }
 
+.page__header .page__description,
 .post__header .post__description,
 .meetup__header .meetup__description,
 .member__header .member__description {
@@ -764,6 +780,7 @@ h6 {
   font-style: normal;
 }
 
+.page__header .page__details,
 .post__header .post__details,
 .meetup__header .meetup__details {
   display: flex;
@@ -807,18 +824,20 @@ h6 {
   margin-bottom: 50px;
 }
 
-
-.post__body
+.page__body,
+.post__body,
 .meetup__body {
   font-size: var(--text-size-l);
 }
 
+.page__body blockquote,
 .post__body blockquote,
 .meetup__body blockquote {
   border-left: none;
   padding-left: 0;
 }
 
+.page__body blockquote p,
 .post__body blockquote p,
 .meetup__body blockquote p {
   font-weight: var(--text-weight-medium);
@@ -830,11 +849,13 @@ h6 {
   padding: 20px 0;
 }
 
+.page__body ul li,
 .meetup__body ul li,
 .post__body ul li {
   list-style-type: disc;
 }
 
+.page__body ol li,
 .meetup__body ol li,
 .meetup__body ul li,
 .post__body ol li,
@@ -842,6 +863,7 @@ h6 {
   line-height: var(--text-size-2xl);
 }
 
+.page__body ol,
 .post__body ol,
 .meetup__body ol,
 .post__body ol li,
@@ -849,6 +871,7 @@ h6 {
   list-style-type: decimal;
 }
 
+.page__body p,
 .post__body p,
 .meetup__body p  {
   font-family: var(--font-family-rubik);
@@ -859,6 +882,7 @@ h6 {
   margin-top: 20px;
 }
 
+.page__body a,
 .post__body a,
 .meetup__body a {
   font-family: var(--font-family-rubik);
@@ -869,6 +893,7 @@ h6 {
   transition: all 0.15s ease;
 }
 
+.page__body a:hover,
 .post__body a:hover,
 .meetup__body a:hover {
   text-decoration: none;
@@ -877,21 +902,28 @@ h6 {
   color: var(--text-color-white);
 }
 
+.page__body pre,
 .post__body pre,
 .meetup__body pre {
   font-size: var(--text-size-m);
 }
 
+.page__body h1,
 .post__body h1,
 .meetup__body h1,
+.page__body h2,
 .post__body h2,
 .meetup__body h2,
+.page__body h3,
 .post__body h3,
 .meetup__body h3,
+.page__body h4,
 .post__body h4,
 .meetup__body h4,
+.page__body h5,
 .post__body h5,
 .meetup__body h5,
+.page__body h6,
 .post__body h6,
 .meetup__body h6 {
   font-family: var(--font-family-rubik);
@@ -899,15 +931,19 @@ h6 {
   color: var(--text-color-black);
 }
 
+.page__body h2,
 .post__body h2,
 .meetup__body h2,
+.page__body h4,
 .post__body h4,
 .meetup__body h4,
+.page__body h6,
 .post__body h6,
 .meetup__body h6 {
   text-decoration: underline;
 }
 
+.page__body h1,
 .post__body h1,
 .meetup__body h1 {
   font-size: var(--text-size-2xl);
@@ -918,6 +954,7 @@ h6 {
   margin-top: 40px;
 }
 
+.page__body h2,
 .post__body h2,
 .meetup__body h2 {
   font-size: var(--text-size-2xl);
@@ -927,6 +964,7 @@ h6 {
   margin-top: 30px;
 }
 
+.page__body h3,
 .post__body h3,
 .meetup__body h3 {
   font-size: calc(var(--text-size-2xl) - 0.3rem);
@@ -934,6 +972,7 @@ h6 {
   margin-top: 20px;
 }
 
+.page__body h4,
 .post__body h4,
 .meetup__body h4 {
   font-size: calc(var(--text-size-2xl) - 0.3rem);
@@ -942,6 +981,7 @@ h6 {
   margin-top: 20px;
 }
 
+.page__body h5,
 .post__body h5,
 .meetup__body h5 {
   font-size: calc(var(--text-size-2xl) - 0.4rem);
@@ -949,6 +989,7 @@ h6 {
   margin-top: 20px;
 }
 
+.page__body h6,
 .post__body h6,
 .meetup__body h6 {
   font-size: calc(var(--text-size-2xl) - 0.4rem);
