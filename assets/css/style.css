@@ -621,13 +621,36 @@ h6 {
   bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   text-align: center;
-  padding: 0;
   margin: 0;
   background-color: var(--color-white);
-  border-top: 1px solid var(--color-gray-xs);
+  border-top: 1px solid var(--color-gray-2xs);
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+.footer__social-networks {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.footer__social-network {
+  margin-right: 20px;
+}
+
+.footer__social-network svg {
+  width: 20px;
+  fill: var(--color-primary);
+}
+
+.footer__social-network svg:hover {
+  cursor: pointer;
+  fill: var(--color-primary-dark);
+  transition: all 1s ease-out;
 }
 
 .footer p {
